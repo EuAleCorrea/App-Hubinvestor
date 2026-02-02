@@ -22,6 +22,8 @@ export const metadata: Metadata = {
     description: "Ferramentas financeiras de precisão para seu portfólio.",
 };
 
+import { Building2, Landmark, Wallet as WalletIcon } from "lucide-react";
+
 const calculadoras = [
     {
         slug: "juros-compostos",
@@ -30,6 +32,13 @@ const calculadoras = [
         icon: TrendingUp,
         categoria: "Investimentos",
         popular: true,
+    },
+    {
+        slug: "juros-simples",
+        nome: "Juros Simples",
+        descricao: "Cálculo básico de juros sobre capital.",
+        icon: Calculator,
+        categoria: "Investimentos",
     },
     {
         slug: "aportes-mensais",
@@ -58,7 +67,50 @@ const calculadoras = [
         descricao: "Planeje sua liberdade financeira futura.",
         icon: Target,
         categoria: "Metas",
-        emBreve: true,
+    },
+    {
+        slug: "roi",
+        nome: "ROI",
+        descricao: "Retorno sobre investimento percentual.",
+        icon: Target,
+        categoria: "Análise",
+    },
+    {
+        slug: "renda-fixa",
+        nome: "Renda Fixa (CDB/LCI/LCA)",
+        descricao: "Simule rendimentos em renda fixa.",
+        icon: Landmark,
+        categoria: "Investimentos",
+        popular: true,
+    },
+    {
+        slug: "salario-liquido",
+        nome: "Salário Líquido CLT",
+        descricao: "Calcule INSS e IRRF do seu salário.",
+        icon: WalletIcon,
+        categoria: "Pessoal",
+        popular: true,
+    },
+    {
+        slug: "financiamento-price",
+        nome: "Tabela PRICE",
+        descricao: "Financiamento com parcelas fixas.",
+        icon: Building2,
+        categoria: "Financiamento",
+    },
+    {
+        slug: "financiamento-sac",
+        nome: "Tabela SAC",
+        descricao: "Parcelas decrescentes, menos juros.",
+        icon: Building2,
+        categoria: "Financiamento",
+    },
+    {
+        slug: "imposto-renda",
+        nome: "IR sobre Investimentos",
+        descricao: "Calcule o imposto com tabela regressiva.",
+        icon: Receipt,
+        categoria: "Tributação",
     },
     {
         slug: "reserva-emergencia",
@@ -66,7 +118,6 @@ const calculadoras = [
         descricao: "Segurança para imprevistos e crises.",
         icon: Shield,
         categoria: "Segurança",
-        emBreve: true,
     },
     {
         slug: "comparador-indices",
@@ -74,15 +125,6 @@ const calculadoras = [
         descricao: "Analise rendimentos reais vs inflação.",
         icon: BarChart3,
         categoria: "Investimentos",
-        emBreve: true,
-    },
-    {
-        slug: "financiamento",
-        nome: "Financiamento",
-        descricao: "Simulações de amortização SAC e Price.",
-        icon: HomeIcon,
-        categoria: "Imobiliário",
-        emBreve: true,
     },
 ];
 
@@ -110,7 +152,7 @@ export default function CalculadorasPage() {
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {calculadoras.map((calc) => {
                     const Icon = calc.icon;
-                    const isAtiva = !calc.emBreve;
+                    const isAtiva = !('emBreve' in calc && calc.emBreve);
                     const Wrapper = isAtiva ? Link : "div";
 
                     return (
@@ -138,7 +180,7 @@ export default function CalculadorasPage() {
                                         Popular
                                     </span>
                                 )}
-                                {calc.emBreve && (
+                                {!isAtiva && (
                                     <span className="bg-slate-100 dark:bg-slate-800 text-slate-400 text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-xl">
                                         Em breve
                                     </span>

@@ -443,6 +443,141 @@ export function calcularComparadorIndices(params: {
 }
 
 /**
+ * Juros Simples: J = C * i * n
+ */
+export function calcularJurosSimples(params: {
+    capitalInicial: number;
+    taxaMensal: number;
+    meses: number;
+}): {
+    montanteFinal: number;
+    totalJuros: number;
+    evolucaoMensal: Array<{ mes: number; montante: number; juros: number }>;
+} {
+    const { capitalInicial, taxaMensal, meses } = params;
+    const jurosPorMes = capitalInicial * taxaMensal;
+    const totalJuros = jurosPorMes * meses;
+    const montanteFinal = capitalInicial + totalJuros;
+
+    const evolucaoMensal = [];
+    for (let mes = 1; mes <= meses; mes++) {
+        evolucaoMensal.push({
+            mes,
+            montante: Number((capitalInicial + jurosPorMes * mes).toFixed(2)),
+            juros: Number(jurosPorMes.toFixed(2)),
+        });
+    }
+
+    return { montanteFinal: Number(montanteFinal.toFixed(2)), totalJuros: Number(totalJuros.toFixed(2)), evolucaoMensal };
+}
+
+/**
+ * ROI - Retorno sobre Investimento: ROI = (Ganho - Custo) / Custo
+ */
+export function calcularROI(params: {
+    investimentoInicial: number;
+    retornoFinal: number;
+    meses?: number;
+}): {
+    roi: number;
+    lucro: number;
+    roiAnualizado: number;
+} {
+    const { investimentoInicial, retornoFinal, meses = 12 } = params;
+    const lucro = retornoFinal - investimentoInicial;
+    const roi = lucro / investimentoInicial;
+    const roiAnualizado = Math.pow(1 + roi, 12 / meses) - 1;
+
+    return { roi, lucro, roiAnualizado };
+}
+
+/**
+ * Rendimento Renda Fixa - CDB, LCI, LCA
+ */
+export function calcularRendaFixa(params: {
+    valorInvestido: number;
+    taxaAnual: number;
+    meses: number;
+    tipo: 'cdb' | 'lci' | 'lca';
+    percentualCDI?: number;
+}): {
+    valorBruto: number;
+    valorLiquido: number;
+    rendimentoBruto: number;
+    rendimentoLiquido: number;
+    imposto: number;
+    isento: boolean;
+} {
+    const { valorInvestido, taxaAnual, meses, tipo, percentualCDI = 100 } = params;
+    const taxaEfetiva = (taxaAnual * percentualCDI) / 100;
+    const taxaMensal = Math.pow(1 + taxaEfetiva, 1 / 12) - 1;
+    const valorBruto = valorInvestido * Math.pow(1 + taxaMensal, meses);
+    const rendimentoBruto = valorBruto - valorInvestido;
+
+    const isento = tipo === 'lci' || tipo === 'lca';
+    let aliquotaIR = 0;
+    if (!isento) {
+        const dias = meses * 30;
+        if (dias <= 180) aliquotaIR = 0.225;
+        else if (dias <= 360) aliquotaIR = 0.20;
+        else if (dias <= 720) aliquotaIR = 0.175;
+        else aliquotaIR = 0.15;
+    }
+
+    const imposto = rendimentoBruto * aliquotaIR;
+    const rendimentoLiquido = rendimentoBruto - imposto;
+    const valorLiquido = valorInvestido + rendimentoLiquido;
+
+    return { valorBruto, valorLiquido, rendimentoBruto, rendimentoLiquido, imposto, isento };
+}
+
+/**
+ * Salário Líquido - Desconta INSS e IRRF
+ */
+export function calcularSalarioLiquido(params: {
+    salarioBruto: number;
+    dependentes?: number;
+    outrosDescontos?: number;
+}): {
+    salarioLiquido: number;
+    inss: number;
+    irrf: number;
+    faixaINSS: string;
+    faixaIRRF: string;
+    totalDescontos: number;
+} {
+    const { salarioBruto, dependentes = 0, outrosDescontos = 0 } = params;
+
+    // Tabela INSS 2024
+    let inss = 0;
+    let faixaINSS = '';
+    if (salarioBruto <= 1412.00) { inss = salarioBruto * 0.075; faixaINSS = '7.5%'; }
+    else if (salarioBruto <= 2666.68) { inss = 1412 * 0.075 + (salarioBruto - 1412) * 0.09; faixaINSS = '9%'; }
+    else if (salarioBruto <= 4000.03) { inss = 1412 * 0.075 + (2666.68 - 1412) * 0.09 + (salarioBruto - 2666.68) * 0.12; faixaINSS = '12%'; }
+    else if (salarioBruto <= 7786.02) { inss = 1412 * 0.075 + (2666.68 - 1412) * 0.09 + (4000.03 - 2666.68) * 0.12 + (salarioBruto - 4000.03) * 0.14; faixaINSS = '14%'; }
+    else { inss = 908.85; faixaINSS = 'Teto'; }
+
+    // Base para IRRF
+    const deducaoDependente = 189.59 * dependentes;
+    const baseIRRF = salarioBruto - inss - deducaoDependente;
+
+    // Tabela IRRF 2024
+    let irrf = 0;
+    let faixaIRRF = '';
+    if (baseIRRF <= 2259.20) { irrf = 0; faixaIRRF = 'Isento'; }
+    else if (baseIRRF <= 2826.65) { irrf = baseIRRF * 0.075 - 169.44; faixaIRRF = '7.5%'; }
+    else if (baseIRRF <= 3751.05) { irrf = baseIRRF * 0.15 - 381.44; faixaIRRF = '15%'; }
+    else if (baseIRRF <= 4664.68) { irrf = baseIRRF * 0.225 - 662.77; faixaIRRF = '22.5%'; }
+    else { irrf = baseIRRF * 0.275 - 896.00; faixaIRRF = '27.5%'; }
+    if (irrf < 0) irrf = 0;
+
+    const totalDescontos = inss + irrf + outrosDescontos;
+    const salarioLiquido = salarioBruto - totalDescontos;
+
+    return { salarioLiquido, inss, irrf, faixaINSS, faixaIRRF, totalDescontos };
+}
+
+/**
  * Formata valor para moeda brasileira
  */
 export function formatarMoeda(valor: number): string {
@@ -458,3 +593,4 @@ export function formatarMoeda(valor: number): string {
 export function formatarPercentual(valor: number, casasDecimais = 2): string {
     return `${(valor * 100).toFixed(casasDecimais)}%`;
 }
+

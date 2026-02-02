@@ -151,13 +151,13 @@ export function CalculadoraJurosCompostos() {
                                         </p>
                                     </div>
                                 </div>
-                                <div className="bg-slate-900 dark:bg-slate-800 p-7 rounded-[2rem] shadow-card flex items-center gap-5">
-                                    <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-primary">
+                                <div className="bg-white dark:bg-slate-900 p-7 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm flex items-center gap-5">
+                                    <div className="w-14 h-14 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-primary">
                                         <TrendingUp className="w-7 h-7" />
                                     </div>
                                     <div>
                                         <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Taxa Efetiva Anual</p>
-                                        <p className="text-2xl font-black text-white tabular-nums">
+                                        <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">
                                             {formatarPercentual(Math.pow(1 + Number(taxaMensal) / 100, 12) - 1)}
                                         </p>
                                     </div>
@@ -238,7 +238,7 @@ export function CalculadoraJurosCompostos() {
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Simulação Pendente</h3>
                             <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">
-                                Configure os parâmetros de capital e tempo para gerar sua projeção patrimonial no modelo <span className="text-primary font-bold">InvestGrow</span>.
+                                Configure os parâmetros de capital e tempo para gerar sua projeção patrimonial no modelo <span className="text-primary font-bold">HubInvestor</span>.
                             </p>
                         </div>
                     )}

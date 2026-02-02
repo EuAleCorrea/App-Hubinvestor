@@ -122,12 +122,12 @@ export function CalculadoraRendaPassiva() {
                                     </p>
                                 </div>
 
-                                <div className="bg-slate-900 dark:bg-slate-800 p-7 rounded-[2rem] shadow-card">
-                                    <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-primary mb-5">
+                                <div className="bg-white dark:bg-slate-900 p-7 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm">
+                                    <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-primary mb-5">
                                         <Wallet className="w-6 h-6" />
                                     </div>
                                     <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Patrimônio Base</p>
-                                    <p className="text-2xl font-black text-white tabular-nums">
+                                    <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">
                                         {formatarMoeda(Number(patrimonio))}
                                     </p>
                                 </div>

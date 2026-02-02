@@ -81,12 +81,12 @@ export function CalculadoraJurosSimples() {
                                 <p className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-2">Total de Juros</p>
                                 <p className="text-2xl font-black text-emerald-700 dark:text-emerald-300 tabular-nums">{formatarMoeda(resultado.totalJuros)}</p>
                             </div>
-                            <div className="bg-slate-900 dark:bg-slate-800 p-7 rounded-[2rem] shadow-card">
-                                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-primary mb-5">
+                            <div className="bg-white dark:bg-slate-900 p-7 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm flex items-center gap-5">
+                                <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <Percent className="w-6 h-6" />
                                 </div>
                                 <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Rendimento Total</p>
-                                <p className="text-2xl font-black text-white tabular-nums">{formatarPercentual(resultado.totalJuros / Number(capital))}</p>
+                                <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">{formatarPercentual(resultado.totalJuros / Number(capital))}</p>
                             </div>
                         </div>
                         <div className="bg-amber-50 dark:bg-amber-900/20 p-6 rounded-[2rem] border border-amber-100 dark:border-amber-800/30">

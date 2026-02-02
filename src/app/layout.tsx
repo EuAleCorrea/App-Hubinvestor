@@ -7,10 +7,34 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "HubInvestor | VestGrow Financial Tools",
-  description: "Calculadoras financeiras modernas para planejar seu futuro e gerenciar investimentos.",
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  themeColor: "#005BFF",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
+
+export const metadata: Metadata = {
+  title: "HubInvestor | Inteligência Financeira",
+  description: "Calculadoras financeiras modernas para planejar seu futuro e gerenciar investimentos.",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "HubInvestor",
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  icons: {
+    icon: "/icon.png",
+    apple: "/icon.png",
+  },
+};
+
+
 
 export default function RootLayout({
   children,

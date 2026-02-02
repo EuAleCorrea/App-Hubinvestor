@@ -18,11 +18,11 @@ import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-    title: "Calculadoras Financeiras | HubInvestor - Inteligência Financeira",
-    description: "Ferramentas financeiras de precisão para seu portfólio. Simuladores de juros compostos, financiamentos, aposentadoria e mais.",
+    title: "Calculadoras Financeiras Gratuitas | HubInvestor - Ferramentas de Precisão",
+    description: "Acesse as melhores calculadoras financeiras do Brasil. Simuladores de Juros Compostos, Aposentadoria, Renda Passiva e muito mais. Gratuito e profissional.",
     openGraph: {
-        title: "Calculadoras Financeiras | HubInvestor",
-        description: "Ferramentas financeiras de precisão para seu portfólio.",
+        title: "Calculadoras Financeiras Gratuitas | HubInvestor",
+        description: "Mais de 15 ferramentas de precisão para potencializar seus investimentos e planejar seu futuro.",
     },
 };
 

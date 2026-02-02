@@ -43,6 +43,30 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="light">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FinancialService",
+              "name": "HubInvestor",
+              "description": "Calculadoras financeiras e ferramentas de inteligência para investidores.",
+              "url": "https://hubinvestor.com.br",
+              "logo": "https://hubinvestor.com.br/icon.png",
+              "image": "https://hubinvestor.com.br/icon.png",
+              "address": {
+                "@type": "PostalAddress",
+                "addressCountry": "BR"
+              },
+              "potentialAction": {
+                "@type": "UseAction",
+                "target": "https://hubinvestor.com.br/calculadoras"
+              }
+            })
+          }}
+        />
+      </head>
       <body
         className={`${inter.variable} antialiased`}
       >

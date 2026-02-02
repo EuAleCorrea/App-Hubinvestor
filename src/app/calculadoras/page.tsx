@@ -18,8 +18,12 @@ import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-    title: "Calculadoras | Vestgrow",
-    description: "Ferramentas financeiras de precisão para seu portfólio.",
+    title: "Calculadoras Financeiras | HubInvestor - Inteligência Financeira",
+    description: "Ferramentas financeiras de precisão para seu portfólio. Simuladores de juros compostos, financiamentos, aposentadoria e mais.",
+    openGraph: {
+        title: "Calculadoras Financeiras | HubInvestor",
+        description: "Ferramentas financeiras de precisão para seu portfólio.",
+    },
 };
 
 import { Building2, Landmark, Wallet as WalletIcon } from "lucide-react";

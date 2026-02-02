@@ -3,8 +3,12 @@ import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraRendaPassiva } from "@/components/calculadoras/renda-passiva";
 
 export const metadata: Metadata = {
-    title: "Renda Passiva | HubInvestor",
+    title: "Calculadora de Renda Passiva | HubInvestor",
     description: "Calcule quanto você pode sacar mensalmente do seu patrimônio usando a regra dos 4%.",
+    openGraph: {
+        title: "Calculadora de Renda Passiva | HubInvestor",
+        description: "Calcule sua renda passiva mensal usando a regra dos 4%.",
+    },
 };
 
 export default function RendaPassivaPage() {

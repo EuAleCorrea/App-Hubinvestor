@@ -18,27 +18,31 @@ import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Dashboard | Vestgrow Financial",
-  description: "Gerencie seu patrimônio e investimentos com clareza.",
+  title: "Dashboard | HubInvestor - Inteligência Financeira",
+  description: "Gerencie seu patrimônio e investimentos com clareza. Calculadoras financeiras modernas para planejar seu futuro.",
+  openGraph: {
+    title: "Dashboard | HubInvestor",
+    description: "Gerencie seu patrimônio e investimentos com clareza.",
+  },
 };
 
 export default function Home() {
   return (
     <DashboardLayout>
-      {/* Boas-vindas Mobile (No Desktop fica no Header do Layout) */}
-      <div className="lg:hidden mb-8 text-left">
-        <h1 className="text-2xl font-bold text-slate-900 dark:text-white">Bem-vindo, Vincentius</h1>
-        <p className="text-slate-500 dark:text-slate-400">Aqui está o que está acontecendo com seu dinheiro hoje.</p>
+      {/* Boas-vindas Mobile - Compacto */}
+      <div className="lg:hidden mb-6 text-left">
+        <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white">Olá, Vincentius 👋</h1>
+        <p className="text-sm text-slate-500 dark:text-slate-400">Seu resumo financeiro de hoje.</p>
       </div>
 
       {/* Grid Principal */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 text-left">
-        {/* Card de Patrimônio Giga */}
-        <div className="lg:col-span-2 bg-white dark:bg-slate-900 p-8 rounded-[2rem] shadow-card border border-slate-100 dark:border-slate-800">
+        {/* Card de Patrimônio - Otimizado Mobile */}
+        <div className="lg:col-span-2 bg-white dark:bg-slate-900 p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-card border border-slate-100 dark:border-slate-800">
           <div className="flex justify-between items-start mb-6">
             <div>
               <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">Patrimônio Líquido Total</p>
-              <h2 className="text-4xl md:text-5xl font-bold mt-2 tracking-tight">R$ 475.432,98</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 tracking-tight">R$ 475.432,98</h2>
               <div className="flex items-center gap-2 mt-3">
                 <span className="px-2.5 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold rounded-lg flex items-center">
                   <ChevronUp className="w-3.5 h-3.5 mr-1" /> 8.2%
@@ -46,14 +50,14 @@ export default function Home() {
                 <span className="text-slate-400 text-xs font-medium">+R$ 41.234,72 de lucro este mês</span>
               </div>
             </div>
-            <div className="flex bg-slate-100 dark:bg-slate-800 p-1.5 rounded-2xl">
-              <button className="px-4 py-2 text-xs font-bold bg-white dark:bg-slate-700 shadow-sm rounded-xl transition-all">Anual</button>
-              <button className="px-4 py-2 text-xs font-bold text-slate-500 hover:text-slate-700 transition-all">Mensal</button>
+            <div className="flex bg-slate-100 dark:bg-slate-800 p-1 sm:p-1.5 rounded-xl sm:rounded-2xl">
+              <button className="min-h-[44px] px-4 sm:px-5 py-2.5 text-xs font-bold bg-white dark:bg-slate-700 shadow-sm rounded-lg sm:rounded-xl transition-all">Anual</button>
+              <button className="min-h-[44px] px-4 sm:px-5 py-2.5 text-xs font-bold text-slate-500 hover:text-slate-700 transition-all">Mensal</button>
             </div>
           </div>
 
-          {/* Gráfico SVG Simulado (Conforme Referência) */}
-          <div className="h-48 relative mt-8">
+          {/* Gráfico SVG - Altura responsiva */}
+          <div className="h-36 sm:h-48 relative mt-4 sm:mt-8">
             <svg className="w-full h-full overflow-visible" viewBox="0 0 100 30" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="blueGradient" x1="0" x2="0" y1="0" y2="1">
@@ -86,8 +90,8 @@ export default function Home() {
 
         {/* Sidebar Cards (Lado do Gráfico) */}
         <div className="space-y-6">
-          {/* Meta de Economia */}
-          <div className="bg-white dark:bg-slate-900 p-7 rounded-[2rem] shadow-card border border-slate-100 dark:border-slate-800">
+          {/* Meta de Economia - Compacto */}
+          <div className="bg-white dark:bg-slate-900 p-5 sm:p-7 rounded-[1.5rem] sm:rounded-[2rem] shadow-card border border-slate-100 dark:border-slate-800">
             <div className="flex items-center justify-between mb-6">
               <h3 className="font-bold text-slate-900 dark:text-white">Meta de Reserva</h3>
               <button className="p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-colors">
@@ -111,12 +115,12 @@ export default function Home() {
             </div>
           </div>
 
-          {/* CTA Investimento */}
-          <div className="bg-primary p-7 rounded-[2rem] shadow-lg shadow-primary/20 text-white relative overflow-hidden group">
+          {/* CTA Investimento - Touch friendly */}
+          <div className="bg-primary p-5 sm:p-7 rounded-[1.5rem] sm:rounded-[2rem] shadow-lg shadow-primary/20 text-white relative overflow-hidden group">
             <div className="relative z-10">
               <h3 className="font-bold text-xl mb-1">Novas Calculadoras</h3>
               <p className="text-xs text-blue-100/80 mb-6 leading-relaxed">Explore nossas ferramentas avançadas para planejar seu 2024.</p>
-              <Link href="/calculadoras" className="inline-flex items-center bg-white text-primary px-5 py-2.5 rounded-xl text-xs font-black hover:bg-blue-50 transition-all group-hover:px-6">
+              <Link href="/calculadoras" className="inline-flex items-center bg-white text-primary min-h-[48px] px-6 py-3 rounded-xl text-sm font-bold hover:bg-blue-50 transition-all group-hover:px-7">
                 Ver Ferramentas <ArrowRight className="w-3.5 h-3.5 ml-2" />
               </Link>
             </div>
@@ -127,8 +131,8 @@ export default function Home() {
 
       {/* Grid Inferior */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 text-left">
-        {/* Atividades Recentes */}
-        <div className="lg:col-span-2 bg-white dark:bg-slate-900 p-8 rounded-[2rem] shadow-card border border-slate-100 dark:border-slate-800">
+        {/* Atividades Recentes - Otimizado Mobile */}
+        <div className="lg:col-span-2 bg-white dark:bg-slate-900 p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-card border border-slate-100 dark:border-slate-800">
           <div className="flex justify-between items-center mb-8">
             <h3 className="font-bold text-lg text-slate-900 dark:text-white">Movimentações Recentes</h3>
             <button className="text-primary text-sm font-bold hover:underline underline-offset-4">Ver Tudo</button>
@@ -159,8 +163,8 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Alocação de Ativos */}
-        <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] shadow-card border border-slate-100 dark:border-slate-800">
+        {/* Alocação de Ativos - Otimizado Mobile */}
+        <div className="bg-white dark:bg-slate-900 p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-card border border-slate-100 dark:border-slate-800">
           <h3 className="font-bold text-lg text-slate-900 dark:text-white mb-8">Alocação de Ativos</h3>
 
           <div className="relative w-44 h-44 mx-auto mb-10">
@@ -192,7 +196,7 @@ export default function Home() {
             ))}
           </div>
 
-          <button className="w-full mt-10 py-3.5 border border-slate-200 dark:border-slate-700 rounded-2xl text-xs font-black hover:bg-slate-50 dark:hover:bg-slate-800 transition-all uppercase tracking-widest">
+          <button className="w-full min-h-[48px] mt-8 sm:mt-10 py-3.5 border border-slate-200 dark:border-slate-700 rounded-xl sm:rounded-2xl text-xs font-black hover:bg-slate-50 dark:hover:bg-slate-800 transition-all uppercase tracking-widest">
             Ajustar Portfólio
           </button>
         </div>

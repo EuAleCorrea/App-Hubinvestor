@@ -3,8 +3,12 @@ import { CalculadoraJurosCompostos } from "@/components/calculadoras";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 
 export const metadata: Metadata = {
-    title: "Juros Compostos | Vestgrow",
-    description: "Entenda o poder do tempo sobre seus investimentos com nossa calculadora de precisão.",
+    title: "Calculadora de Juros Compostos | HubInvestor",
+    description: "Entenda o poder do tempo sobre seus investimentos com nossa calculadora de precisão. Simule a força do tempo no seu patrimônio.",
+    openGraph: {
+        title: "Calculadora de Juros Compostos | HubInvestor",
+        description: "Simule a força do tempo no seu patrimônio.",
+    },
 };
 
 export default function JurosCompostosPage() {

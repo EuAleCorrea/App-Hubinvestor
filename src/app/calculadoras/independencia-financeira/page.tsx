@@ -3,8 +3,12 @@ import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraIndependenciaFinanceira } from "@/components/calculadoras/independencia-financeira";
 
 export const metadata: Metadata = {
-    title: "Independência Financeira | HubInvestor",
+    title: "Calculadora de Independência Financeira | HubInvestor",
     description: "Calcule seu número FIRE e descubra o patrimônio necessário para viver de renda passiva.",
+    openGraph: {
+        title: "Calculadora FIRE | HubInvestor",
+        description: "Descubra o patrimônio necessário para alcançar a liberdade financeira.",
+    },
 };
 
 export default function IndependenciaFinanceiraPage() {

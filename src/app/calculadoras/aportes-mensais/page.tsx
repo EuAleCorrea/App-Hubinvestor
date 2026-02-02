@@ -3,8 +3,12 @@ import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraAportesMensais } from "@/components/calculadoras/aportes-mensais";
 
 export const metadata: Metadata = {
-    title: "Aportes Mensais | HubInvestor",
+    title: "Calculadora de Aportes Mensais | HubInvestor",
     description: "Simule o crescimento do seu patrimônio com aportes recorrentes e juros compostos.",
+    openGraph: {
+        title: "Calculadora de Aportes Mensais | HubInvestor",
+        description: "Simule o crescimento do seu patrimônio com aportes recorrentes.",
+    },
 };
 
 export default function AportesMensaisPage() {

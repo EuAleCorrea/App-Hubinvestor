@@ -1,26 +1,30 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
+import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraComparadorIndices } from "@/components/calculadoras/comparador-indices";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
 
 export const metadata: Metadata = {
     title: "Comparador CDI vs IPCA | HubInvestor",
     description: "Compare rendimentos do CDI com a inflação (IPCA). Descubra seu rendimento real após a inflação.",
+    openGraph: {
+        title: "Comparador CDI vs IPCA | HubInvestor",
+        description: "Compare rendimentos do CDI com a inflação (IPCA).",
+    },
 };
 
 export default function ComparadorIndicesPage() {
     return (
-        <main className="min-h-screen bg-slate-50 dark:bg-slate-950 py-8 md:py-16 px-4 md:px-8">
-            <div className="max-w-7xl mx-auto">
-                <Link href="/calculadoras" className="inline-flex items-center gap-2 text-slate-500 hover:text-primary mb-8 text-sm font-medium">
-                    <ArrowLeft className="w-4 h-4" />Voltar para Calculadoras
-                </Link>
-                <div className="text-center mb-12">
-                    <h1 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white mb-4">Comparador <span className="text-teal-500">CDI vs IPCA</span></h1>
-                    <p className="text-lg text-slate-500 max-w-2xl mx-auto">Analise se seus rendimentos estão superando a inflação e gerando ganho real.</p>
+        <DashboardLayout>
+            <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+                <div className="text-center mb-10 sm:mb-14">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
+                        Comparador <span className="text-primary">CDI vs IPCA</span>
+                    </h1>
+                    <p className="text-slate-500 dark:text-slate-400 mt-4 text-base sm:text-lg max-w-2xl mx-auto">
+                        Analise se seus rendimentos estão superando a inflação e gerando ganho real.
+                    </p>
                 </div>
                 <CalculadoraComparadorIndices />
             </div>
-        </main>
+        </DashboardLayout>
     );
 }

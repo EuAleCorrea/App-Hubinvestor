@@ -66,7 +66,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                         <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
                             <Wallet className="w-6 h-6 text-primary" />
                         </div>
-                        <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">Vestgrow</span>
+                        <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">HubInvestor</span>
                     </Link>
                 </div>
 
@@ -100,7 +100,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
             <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 p-4 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 text-primary">
                     <Wallet className="w-6 h-6" />
-                    <span className="text-lg font-bold tracking-tight">Vestgrow</span>
+                    <span className="text-lg font-bold tracking-tight">HubInvestor</span>
                 </Link>
                 <button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -139,7 +139,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                             <div className="w-10 h-10 rounded-2xl overflow-hidden border-2 border-white dark:border-slate-800 shadow-sm ring-2 ring-slate-100 dark:ring-slate-800">
                                 <img
                                     src="https://api.dicebear.com/7.x/avataaars/svg?seed=Vincentius"
-                                    alt="Avatar"
+                                    alt="Avatar do usuário HubInvestor"
                                     className="w-full h-full object-cover"
                                 />
                             </div>
@@ -165,7 +165,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                         <div className="p-6 flex items-center justify-between">
                             <Link href="/" className="flex items-center gap-2 text-primary">
                                 <Wallet className="w-7 h-7" />
-                                <span className="text-xl font-bold tracking-tight">Vestgrow</span>
+                                <span className="text-xl font-bold tracking-tight">HubInvestor</span>
                             </Link>
                             <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 rounded-lg hover:bg-slate-100">
                                 <X className="w-6 h-6" />

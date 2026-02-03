@@ -109,7 +109,7 @@ export default function LandingPage() {
                         <div className="hidden md:flex items-center space-x-8">
                             <a href="#ferramentas" className="text-sm font-semibold hover:text-primary transition-colors">Ferramentas</a>
                             <a href="#como-funciona" className="text-sm font-semibold hover:text-primary transition-colors">Como Funciona</a>
-                            <Link href="/calculadoras" className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-2xl font-bold text-sm transition-all transform hover:scale-105 shadow-lg shadow-primary/20">
+                            <Link href="/" className="bg-primary hover:bg-primary/90 text-white px-6 py-2.5 rounded-2xl font-bold text-sm transition-all transform hover:scale-105 shadow-lg shadow-primary/20">
                                 Acessar App
                             </Link>
                         </div>
@@ -128,7 +128,7 @@ export default function LandingPage() {
                     <div className="md:hidden bg-white dark:bg-slate-900 border-t border-slate-200 dark:border-slate-800 p-4 space-y-4">
                         <a href="#ferramentas" className="block text-sm font-semibold hover:text-primary">Ferramentas</a>
                         <a href="#como-funciona" className="block text-sm font-semibold hover:text-primary">Como Funciona</a>
-                        <Link href="/calculadoras" className="block bg-primary text-white text-center px-6 py-3 rounded-2xl font-bold text-sm">
+                        <Link href="/" className="block bg-primary text-white text-center px-6 py-3 rounded-2xl font-bold text-sm">
                             Acessar App
                         </Link>
                     </div>
@@ -145,7 +145,7 @@ export default function LandingPage() {
                         100% Gratuito e Seguro
                     </div>
 
-                    <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tighter text-slate-900 dark:text-white leading-[1.05]">
+                    <h1 className="text-5xl md:text-7xl font-black mb-8 tracking-tight text-slate-900 dark:text-white leading-[1.1] [word-spacing:0.15em]">
                         Domine suas Finanças<br />com Nossas
                         <span className="text-primary block md:inline"> Calculadoras</span>
                     </h1>
@@ -230,7 +230,7 @@ export default function LandingPage() {
 
                 <div className="max-w-7xl mx-auto px-4 relative z-10">
                     <div className="text-center mb-20">
-                        <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tighter text-slate-900 dark:text-white">Como Funciona</h2>
+                        <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tight text-slate-900 dark:text-white [word-spacing:0.1em]">Como Funciona</h2>
                         <div className="w-20 h-1.5 bg-primary rounded-full mx-auto mb-6"></div>
                         <p className="text-slate-500 dark:text-slate-400 font-medium text-lg">Três passos simples para dominar suas finanças.</p>
                     </div>
@@ -256,13 +256,13 @@ export default function LandingPage() {
             {/* CTA Final */}
             <section className="py-32 px-4">
                 <div className="max-w-4xl mx-auto text-center">
-                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tighter text-slate-900 dark:text-white">
+                    <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-slate-900 dark:text-white [word-spacing:0.1em]">
                         Pronto para começar?
                     </h2>
                     <p className="text-xl text-slate-500 dark:text-slate-400 mb-10 font-medium">
                         Acesse gratuitamente todas as nossas ferramentas e domine suas finanças hoje.
                     </p>
-                    <Link href="/calculadoras" className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all transform hover:scale-105 shadow-2xl shadow-primary/30">
+                    <Link href="/" className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all transform hover:scale-105 shadow-2xl shadow-primary/30">
                         Acessar Calculadoras
                         <ArrowUpRight className="w-5 h-5" />
                     </Link>

@@ -286,8 +286,8 @@ export default function LandingPage() {
                     <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-slate-500">
                         <p>© 2024 HubInvestor. Todos os direitos reservados.</p>
                         <div className="flex gap-8">
-                            <a href="#" className="hover:text-primary transition-colors">Termos</a>
-                            <a href="#" className="hover:text-primary transition-colors">Privacidade</a>
+                            <a href="/termos" className="hover:text-primary transition-colors">Termos</a>
+                            <a href="/privacidade" className="hover:text-primary transition-colors">Privacidade</a>
                         </div>
                     </div>
                 </div>

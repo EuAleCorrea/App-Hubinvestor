@@ -165,10 +165,10 @@ export default function CalculadorasPage() {
 
                 {/* Filtros e Categorias */}
                 <section className="mb-12">
-                    <div className="flex flex-wrap gap-2">
-                        <button className="px-6 py-2 rounded-full bg-primary text-white text-[10px] font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Todas</button>
+                    <div className="flex flex-wrap gap-3">
+                        <button className="px-8 py-3 rounded-full bg-primary text-white text-sm font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Todas</button>
                         {["Investimentos", "Planejamento", "Metas", "Análise", "Pessoal"].map((cat) => (
-                            <button key={cat} className="px-6 py-2 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-[10px] font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all">
+                            <button key={cat} className="px-8 py-3 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-sm font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all">
                                 {cat}
                             </button>
                         ))}
@@ -177,7 +177,7 @@ export default function CalculadorasPage() {
 
                 {/* Grade de Calculadoras */}
                 <main className="mb-20">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {calculadoras.map((calc) => {
                             const Icon = calc.icon;
                             const isAtiva = !('emBreve' in calc && calc.emBreve);
@@ -188,45 +188,47 @@ export default function CalculadorasPage() {
                                     key={calc.slug}
                                     href={isAtiva ? `/calculadoras/${calc.slug}` : "#"}
                                     className={cn(
-                                        "group bg-white dark:bg-slate-900/40 p-6 rounded-[2rem] border border-slate-200 dark:border-slate-800 shadow-sm transition-all duration-500 relative text-left overflow-hidden flex flex-col h-full",
+                                        "group bg-white dark:bg-slate-900/60 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm transition-all duration-500 relative text-left overflow-hidden flex flex-col h-full",
                                         isAtiva
-                                            ? "hover:border-primary/30 hover:shadow-premium hover:-translate-y-1 cursor-pointer"
+                                            ? "hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/30 hover:-translate-y-2 cursor-pointer"
                                             : "opacity-60 cursor-not-allowed"
                                     )}
                                 >
-                                    <div className="flex items-start justify-between mb-6">
+                                    <div className="flex items-start justify-between mb-8">
                                         <div className={cn(
-                                            "w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 group-hover:scale-110",
+                                            "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110",
                                             isAtiva
                                                 ? "bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white group-hover:rotate-3 shadow-sm"
                                                 : "bg-slate-100 dark:bg-slate-800 text-slate-400"
                                         )}>
-                                            <Icon className="w-6 h-6" />
+                                            <Icon className="w-7 h-7" />
                                         </div>
                                         {calc.popular && isAtiva && (
-                                            <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[9px] font-black uppercase tracking-widest px-2 py-1 rounded-lg border border-emerald-500/10">
+                                            <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-black uppercase tracking-widest px-4 py-2 rounded-xl border border-emerald-500/10">
                                                 Popular
                                             </span>
                                         )}
                                     </div>
 
                                     <div className="flex-1">
-                                        <p className="text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] mb-1.5">{calc.categoria}</p>
-                                        <h2 className="text-xl font-black text-slate-900 dark:text-white mb-2 group-hover:text-primary transition-colors tracking-tight">
+                                        <p className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-2">{calc.categoria}</p>
+                                        <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors tracking-tight">
                                             {calc.nome}
                                         </h2>
-                                        <p className="text-xs text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-6">
+                                        <p className="text-base text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
                                             {calc.descricao}
                                         </p>
                                     </div>
 
                                     <div className={cn(
-                                        "pt-4 border-t border-slate-50 dark:border-white/5 flex items-center justify-between text-[9px] font-black uppercase tracking-widest transition-all",
+                                        "pt-6 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs font-black uppercase tracking-widest transition-all",
                                         isAtiva ? "text-primary group-hover:gap-2" : "text-slate-300"
                                     )}>
                                         <span>{isAtiva ? "Abrir Ferramenta" : "Em Breve"}</span>
-                                        <ArrowUpRight className={cn("w-3.5 h-3.5 transition-transform duration-500", isAtiva && "group-hover:translate-x-1 group-hover:-translate-y-1")} />
+                                        <ArrowUpRight className={cn("w-5 h-5 transition-transform duration-500", isAtiva && "group-hover:translate-x-1 group-hover:-translate-y-1")} />
                                     </div>
+
+                                    <div className="absolute -right-10 -bottom-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
                                 </Wrapper>
                             );
                         })}

@@ -211,6 +211,10 @@ export default function CalculadoraPublicaPage() {
                         </div>
                         <span className="text-xl font-black tracking-tight">HubInvestor</span>
                     </div>
+                    <div className="flex justify-center gap-8 mb-4 text-[10px] font-bold uppercase tracking-widest text-slate-500">
+                        <Link href="/termos" className="hover:text-primary transition-colors">Termos</Link>
+                        <Link href="/privacidade" className="hover:text-primary transition-colors">Privacidade</Link>
+                    </div>
                     <p className="text-slate-500 text-xs font-medium">
                         © 2024 HubInvestor. Todos os direitos reservados.
                     </p>

@@ -188,7 +188,7 @@ export default function LandingPage() {
                         return (
                             <Link
                                 key={calc.slug}
-                                href={`/calculadoras/${calc.slug}`}
+                                href={`/lp/${calc.slug}`}
                                 className="group bg-white dark:bg-slate-900/60 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500 relative text-left overflow-hidden flex flex-col h-full hover:border-primary/30 hover:-translate-y-2"
                             >
                                 <div className="flex items-start justify-between mb-8">

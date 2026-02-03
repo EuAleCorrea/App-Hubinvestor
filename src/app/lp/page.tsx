@@ -171,9 +171,9 @@ export default function LandingPage() {
             {/* Filtros */}
             <section className="max-w-7xl mx-auto px-4 mb-16" id="ferramentas">
                 <div className="flex flex-wrap justify-center gap-3">
-                    <button className="px-7 py-2.5 rounded-full bg-primary text-white text-xs font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Todas</button>
+                    <button className="px-8 py-3 rounded-full bg-primary text-white text-sm font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Todas</button>
                     {["Investimentos", "Planejamento", "Metas", "Pessoal"].map((cat) => (
-                        <button key={cat} className="px-7 py-2.5 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-xs font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all">
+                        <button key={cat} className="px-8 py-3 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-sm font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all">
                             {cat}
                         </button>
                     ))}
@@ -196,25 +196,25 @@ export default function LandingPage() {
                                         <Icon className="w-7 h-7" />
                                     </div>
                                     {calc.popular && (
-                                        <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-xl border border-emerald-500/10">
+                                        <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-black uppercase tracking-widest px-4 py-2 rounded-xl border border-emerald-500/10">
                                             Popular
                                         </span>
                                     )}
                                 </div>
 
                                 <div className="flex-1">
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-2">{calc.categoria}</p>
-                                    <h2 className="text-2xl font-black text-slate-900 dark:text-white mb-3 group-hover:text-primary transition-colors tracking-tight">
+                                    <p className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-2">{calc.categoria}</p>
+                                    <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors tracking-tight">
                                         {calc.nome}
                                     </h2>
-                                    <p className="text-sm text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
+                                    <p className="text-base text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
                                         {calc.descricao}
                                     </p>
                                 </div>
 
-                                <div className="pt-6 border-t border-slate-100 dark:border-white/5 flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-primary group-hover:gap-2 transition-all">
+                                <div className="pt-6 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs font-black uppercase tracking-widest text-primary group-hover:gap-2 transition-all">
                                     <span>Simular Agora</span>
-                                    <ArrowUpRight className="w-4 h-4 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
+                                    <ArrowUpRight className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1 group-hover:-translate-y-1" />
                                 </div>
 
                                 <div className="absolute -right-10 -bottom-10 w-32 h-32 bg-primary/5 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>

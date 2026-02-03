@@ -175,7 +175,7 @@ export default function CalculadoraPublicaPage() {
                             {calculadora.descricao}
                         </p>
                     </div>
-                    <div className="flex items-center gap-2 px-3 py-1.5 bg-blue-50 dark:bg-primary/10 text-primary text-[10px] font-black uppercase tracking-widest rounded-xl border border-blue-100 dark:border-primary/20 shrink-0">
+                    <div className="flex items-center gap-2 px-4 py-2 bg-blue-50 dark:bg-primary/10 text-primary text-xs font-black uppercase tracking-widest rounded-xl border border-blue-100 dark:border-primary/20 shrink-0">
                         <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
                         Simulador de Precisão
                     </div>

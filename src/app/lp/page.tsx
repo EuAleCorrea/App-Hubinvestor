@@ -68,7 +68,7 @@ const calculadoras = [
     {
         slug: "renda-fixa",
         nome: "Renda Fixa (CDB/LCI/LCA)",
-        descricao: "Simule rendimentos em renda fixa com diferentes taxas e prazos.",
+        descricao: "Simule rendimentos em renda fixa com diferentes taxas e prazos para diversificar sua carteira.",
         icon: Landmark,
         categoria: "Investimentos",
         popular: true,
@@ -76,7 +76,7 @@ const calculadoras = [
     {
         slug: "salario-liquido",
         nome: "Salário Líquido CLT",
-        descricao: "Calcule INSS e IRRF do seu salário bruto e descubra o valor líquido.",
+        descricao: "Calcule INSS e IRRF do seu salário bruto e descubra exatamente quanto você recebe na conta.",
         icon: WalletIcon,
         categoria: "Pessoal",
         popular: true,
@@ -84,9 +84,44 @@ const calculadoras = [
     {
         slug: "financiamento-price",
         nome: "Tabela PRICE",
-        descricao: "Financiamento com parcelas fixas para imóveis e veículos.",
+        descricao: "Financiamento com parcelas fixas, ideal para planejamento mensal de longo prazo.",
         icon: Building2,
         categoria: "Financiamento",
+    },
+    {
+        slug: "financiamento-sac",
+        nome: "Tabela SAC",
+        descricao: "Simule financiamentos com parcelas decrescentes e pague menos juros ao longo do tempo.",
+        icon: Building2,
+        categoria: "Financiamento",
+    },
+    {
+        slug: "roi",
+        nome: "ROI",
+        descricao: "Meça a eficiência de seus investimentos e saiba exatamente qual foi o seu retorno financeiro.",
+        icon: Target,
+        categoria: "Análise",
+    },
+    {
+        slug: "imposto-renda",
+        nome: "IR sobre Investimentos",
+        descricao: "Entenda o impacto dos impostos em seus rendimentos e planeje sua eficiência tributária.",
+        icon: Receipt,
+        categoria: "Tributação",
+    },
+    {
+        slug: "reserva-emergencia",
+        nome: "Reserva de Emergência",
+        descricao: "Calcule o montante ideal para garantir sua segurança e tranquilidade em momentos imprevistos.",
+        icon: Shield,
+        categoria: "Segurança",
+    },
+    {
+        slug: "comparador-indices",
+        nome: "Comparador CDI/IPCA",
+        descricao: "Analise o rendimento real dos seus investimentos contra a inflação e a taxa Selic.",
+        icon: BarChart3,
+        categoria: "Investimentos",
     },
 ];
 
@@ -172,7 +207,7 @@ export default function LandingPage() {
             <section className="max-w-7xl mx-auto px-4 mb-16" id="ferramentas">
                 <div className="flex flex-wrap justify-center gap-3">
                     <button className="px-8 py-3 rounded-full bg-primary text-white text-sm font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Todas</button>
-                    {["Investimentos", "Planejamento", "Metas", "Pessoal"].map((cat) => (
+                    {["Investimentos", "Planejamento", "Metas", "Análise", "Financiamento", "Tributação", "Segurança", "Pessoal"].map((cat) => (
                         <button key={cat} className="px-8 py-3 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-500 dark:text-slate-400 text-sm font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all">
                             {cat}
                         </button>

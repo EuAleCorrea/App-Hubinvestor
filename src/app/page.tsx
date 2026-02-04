@@ -39,20 +39,22 @@ export default function Home() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8 text-left">
         {/* Card de Patrimônio - Otimizado Mobile */}
         <div className="lg:col-span-2 bg-white dark:bg-slate-900 p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2rem] shadow-card border border-slate-100 dark:border-slate-800">
-          <div className="flex justify-between items-start mb-6">
-            <div>
-              <p className="text-slate-500 dark:text-slate-400 text-sm font-medium">Patrimônio Líquido Total</p>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 tracking-tight">R$ 475.432,98</h2>
+          <div className="flex flex-col lg:flex-row justify-between items-start mb-6 gap-4 lg:gap-0">
+            <div className="order-2 lg:order-1 w-full">
+              <p className="text-slate-500 dark:text-slate-400 text-sm font-medium mb-1 lg:mb-0">Patrimônio Líquido Total</p>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mt-1 sm:mt-2 tracking-tight w-full truncate">R$ 475.432,98</h2>
               <div className="flex items-center gap-2 mt-3">
                 <span className="px-2.5 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-bold rounded-lg flex items-center">
                   <ChevronUp className="w-3.5 h-3.5 mr-1" /> 8.2%
                 </span>
-                <span className="text-slate-400 text-xs font-medium">+R$ 41.234,72 de lucro este mês</span>
+                <span className="text-slate-400 text-xs font-medium hidden sm:inline">+R$ 41.234,72 de lucro este mês</span>
               </div>
             </div>
-            <div className="flex bg-slate-100 dark:bg-slate-800 p-1 sm:p-1.5 rounded-xl sm:rounded-2xl">
-              <button className="min-h-[44px] px-4 sm:px-5 py-2.5 text-xs font-bold bg-white dark:bg-slate-700 shadow-sm rounded-lg sm:rounded-xl transition-all">Anual</button>
-              <button className="min-h-[44px] px-4 sm:px-5 py-2.5 text-xs font-bold text-slate-500 hover:text-slate-700 transition-all">Mensal</button>
+            <div className="order-1 lg:order-2 flex justify-end w-full lg:w-auto bg-transparent lg:bg-slate-100 lg:dark:bg-slate-800 p-0 lg:p-1.5 rounded-2xl">
+              <div className="flex bg-slate-100 dark:bg-slate-800 p-1.5 rounded-2xl lg:p-0 lg:bg-transparent lg:dark:bg-transparent">
+                <button className="min-h-[48px] px-5 py-2.5 text-xs font-bold bg-white dark:bg-slate-700 shadow-sm rounded-xl transition-all">Anual</button>
+                <button className="min-h-[48px] px-5 py-2.5 text-xs font-bold text-slate-500 hover:text-slate-700 transition-all">Mensal</button>
+              </div>
             </div>
           </div>
 

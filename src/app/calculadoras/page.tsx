@@ -165,10 +165,10 @@ export default function CalculadorasPage() {
 
                 {/* Filtros e Categorias */}
                 <section className="mb-12">
-                    <div className="flex flex-wrap gap-3">
-                        <button className="px-8 py-3 rounded-full bg-primary text-white text-sm font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Todas</button>
+                    <div className="flex gap-3 overflow-x-auto pb-2 -mx-6 px-6 md:mx-0 md:px-0 md:flex-wrap scrollbar-hide">
+                        <button className="shrink-0 px-5 sm:px-8 py-3 min-h-[44px] rounded-full bg-primary text-white text-sm font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Todas</button>
                         {["Investimentos", "Planejamento", "Metas", "Análise", "Pessoal"].map((cat) => (
-                            <button key={cat} className="px-8 py-3 rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-sm font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all">
+                            <button key={cat} className="shrink-0 px-5 sm:px-8 py-3 min-h-[44px] rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-sm font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all whitespace-nowrap">
                                 {cat}
                             </button>
                         ))}
@@ -188,40 +188,40 @@ export default function CalculadorasPage() {
                                     key={calc.slug}
                                     href={isAtiva ? `/calculadoras/${calc.slug}` : "#"}
                                     className={cn(
-                                        "group bg-white dark:bg-slate-900/60 p-8 rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm transition-all duration-500 relative text-left overflow-hidden flex flex-col h-full",
+                                        "group bg-white dark:bg-slate-900/60 p-5 sm:p-8 rounded-[2rem] sm:rounded-[2.5rem] border border-slate-100 dark:border-slate-800 shadow-sm transition-all duration-500 relative text-left overflow-hidden flex flex-col h-full",
                                         isAtiva
                                             ? "hover:shadow-2xl hover:shadow-primary/5 hover:border-primary/30 hover:-translate-y-2 cursor-pointer"
                                             : "opacity-60 cursor-not-allowed"
                                     )}
                                 >
-                                    <div className="flex items-start justify-between mb-8">
+                                    <div className="flex items-start justify-between mb-5 sm:mb-8">
                                         <div className={cn(
-                                            "w-14 h-14 rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110",
+                                            "w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110",
                                             isAtiva
                                                 ? "bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white group-hover:rotate-3 shadow-sm"
                                                 : "bg-slate-100 dark:bg-slate-800 text-slate-400"
                                         )}>
-                                            <Icon className="w-7 h-7" />
+                                            <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
                                         </div>
                                         {calc.popular && isAtiva && (
-                                            <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-black uppercase tracking-widest px-4 py-2 rounded-xl border border-emerald-500/10">
+                                            <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-[10px] sm:text-xs font-black uppercase tracking-widest px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg sm:rounded-xl border border-emerald-500/10">
                                                 Popular
                                             </span>
                                         )}
                                     </div>
 
                                     <div className="flex-1">
-                                        <p className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-2">{calc.categoria}</p>
-                                        <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors tracking-tight">
+                                        <p className="text-xs font-black text-slate-400 dark:text-slate-500 uppercase tracking-[0.2em] mb-1.5 sm:mb-2">{calc.categoria}</p>
+                                        <h2 className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mb-2 sm:mb-4 group-hover:text-primary transition-colors tracking-tight">
                                             {calc.nome}
                                         </h2>
-                                        <p className="text-base text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
+                                        <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-5 sm:mb-8">
                                             {calc.descricao}
                                         </p>
                                     </div>
 
                                     <div className={cn(
-                                        "pt-6 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs font-black uppercase tracking-widest transition-all",
+                                        "pt-4 sm:pt-6 border-t border-slate-100 dark:border-white/10 flex items-center justify-between text-xs font-black uppercase tracking-widest transition-all min-h-[44px]",
                                         isAtiva ? "text-primary group-hover:gap-2" : "text-slate-300"
                                     )}>
                                         <span>{isAtiva ? "Abrir Ferramenta" : "Em Breve"}</span>

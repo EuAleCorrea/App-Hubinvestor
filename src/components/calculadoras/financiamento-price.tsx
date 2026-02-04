@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { calcularFinanciamentoPrice, formatarMoeda, formatarPercentual } from "@/lib/calculadoras";
@@ -29,18 +29,18 @@ export function CalculadoraFinanciamentoPrice() {
                             <Building2 className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Simulador</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Simulador</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Tabela PRICE</h2>
                         </div>
                     </div>
 
                     <div className="space-y-6">
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">
                                 Valor Financiado
                             </label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input
                                     type="number"
                                     value={valorFinanciado}
@@ -52,7 +52,7 @@ export function CalculadoraFinanciamentoPrice() {
                         </div>
 
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">
                                 Taxa de Juros Mensal
                             </label>
                             <div className="relative">
@@ -64,12 +64,12 @@ export function CalculadoraFinanciamentoPrice() {
                                     placeholder="0.9"
                                     step="0.1"
                                 />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">%</span>
                             </div>
                         </div>
 
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">
                                 Prazo (Meses)
                             </label>
                             <div className="relative">
@@ -80,9 +80,9 @@ export function CalculadoraFinanciamentoPrice() {
                                     className="w-full h-14 pl-6 pr-16 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm"
                                     placeholder="360"
                                 />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-400 uppercase tracking-widest">Meses</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Meses</span>
                             </div>
-                            <p className="text-xs text-slate-400 mt-2 ml-1">{Math.floor(Number(prazoMeses || 0) / 12)} anos</p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 ml-1">{Math.floor(Number(prazoMeses || 0) / 12)} anos</p>
                         </div>
                     </div>
 
@@ -122,7 +122,7 @@ export function CalculadoraFinanciamentoPrice() {
                                     <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                         <Banknote className="w-6 h-6" />
                                     </div>
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Total Pago</p>
+                                    <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Total Pago</p>
                                     <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">
                                         {formatarMoeda(resultado.totalPago)}
                                     </p>
@@ -142,7 +142,7 @@ export function CalculadoraFinanciamentoPrice() {
                                     <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                         <PieChart className="w-6 h-6" />
                                     </div>
-                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">% de Juros</p>
+                                    <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">% de Juros</p>
                                     <p className="text-2xl font-black text-white tabular-nums">
                                         {formatarPercentual(resultado.totalJuros / Number(valorFinanciado))}
                                     </p>
@@ -156,11 +156,11 @@ export function CalculadoraFinanciamentoPrice() {
                                     <table className="w-full text-sm">
                                         <thead>
                                             <tr className="border-b border-slate-100 dark:border-slate-800">
-                                                <th className="text-left py-3 px-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Parcela</th>
-                                                <th className="text-right py-3 px-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Amortização</th>
-                                                <th className="text-right py-3 px-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Juros</th>
-                                                <th className="text-right py-3 px-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Valor</th>
-                                                <th className="text-right py-3 px-4 text-[10px] font-black text-slate-400 uppercase tracking-widest">Saldo</th>
+                                                <th className="text-left py-3 px-4 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Parcela</th>
+                                                <th className="text-right py-3 px-4 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Amortização</th>
+                                                <th className="text-right py-3 px-4 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Juros</th>
+                                                <th className="text-right py-3 px-4 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Valor</th>
+                                                <th className="text-right py-3 px-4 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Saldo</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -168,19 +168,19 @@ export function CalculadoraFinanciamentoPrice() {
                                                 <tr key={p.numero} className="border-b border-slate-50 dark:border-slate-800/50">
                                                     <td className="py-3 px-4 font-bold text-slate-900 dark:text-white">{p.numero}ª</td>
                                                     <td className="py-3 px-4 text-right text-emerald-600 font-medium">{formatarMoeda(p.amortizacao)}</td>
-                                                    <td className="py-3 px-4 text-right text-red-500 font-medium">{formatarMoeda(p.juros)}</td>
+                                                    <td className="py-3 px-4 text-right text-red-600 font-medium">{formatarMoeda(p.juros)}</td>
                                                     <td className="py-3 px-4 text-right font-bold text-slate-900 dark:text-white">{formatarMoeda(p.parcela)}</td>
                                                     <td className="py-3 px-4 text-right text-slate-500">{formatarMoeda(p.saldoDevedor)}</td>
                                                 </tr>
                                             ))}
                                             <tr>
-                                                <td colSpan={5} className="py-2 text-center text-slate-400">...</td>
+                                                <td colSpan={5} className="py-2 text-center text-slate-500 dark:text-slate-400">...</td>
                                             </tr>
                                             {resultado.parcelas.slice(-2).map((p) => (
                                                 <tr key={p.numero} className="border-b border-slate-50 dark:border-slate-800/50">
                                                     <td className="py-3 px-4 font-bold text-slate-900 dark:text-white">{p.numero}ª</td>
                                                     <td className="py-3 px-4 text-right text-emerald-600 font-medium">{formatarMoeda(p.amortizacao)}</td>
-                                                    <td className="py-3 px-4 text-right text-red-500 font-medium">{formatarMoeda(p.juros)}</td>
+                                                    <td className="py-3 px-4 text-right text-red-600 font-medium">{formatarMoeda(p.juros)}</td>
                                                     <td className="py-3 px-4 text-right font-bold text-slate-900 dark:text-white">{formatarMoeda(p.parcela)}</td>
                                                     <td className="py-3 px-4 text-right text-slate-500">{formatarMoeda(p.saldoDevedor)}</td>
                                                 </tr>
@@ -212,7 +212,7 @@ export function CalculadoraFinanciamentoPrice() {
                                 <Info className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Simulação Pendente</h3>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">
                                 Configure o valor, taxa e prazo do financiamento para visualizar as parcelas no sistema PRICE.
                             </p>
                         </div>

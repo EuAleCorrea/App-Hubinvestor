@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { calcularRendaFixa, formatarMoeda } from "@/lib/calculadoras";
@@ -28,41 +28,41 @@ export function CalculadoraRendaFixa() {
                             <Landmark className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Simulador</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Simulador</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Renda Fixa</h2>
                         </div>
                     </div>
                     <div className="space-y-5">
                         <div className="grid grid-cols-3 gap-2">
                             {(['cdb', 'lci', 'lca'] as TipoInvestimento[]).map((t) => (
-                                <button key={t} onClick={() => setTipo(t)} className={`py-3 rounded-xl text-xs font-black uppercase transition-all ${tipo === t ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}>{t.toUpperCase()}</button>
+                                <button key={t} onClick={() => setTipo(t)} className={`py-3 rounded-xl text-xs font-black uppercase transition-all ${tipo === t ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}>{t.toUpperCase()}</button>
                             ))}
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Valor Investido</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Valor Investido</label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input type="number" value={valor} onChange={(e) => setValor(e.target.value)} className="w-full h-14 pl-12 pr-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" />
                             </div>
                         </div>
                         <div className="grid grid-cols-2 gap-4">
                             <div className="group">
-                                <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Taxa CDI a.a.</label>
+                                <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Taxa CDI a.a.</label>
                                 <div className="relative">
                                     <input type="number" value={taxaCDI} onChange={(e) => setTaxaCDI(e.target.value)} className="w-full h-14 pl-6 pr-10 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" step="0.25" />
-                                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+                                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">%</span>
                                 </div>
                             </div>
                             <div className="group">
-                                <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">% do CDI</label>
+                                <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">% do CDI</label>
                                 <div className="relative">
                                     <input type="number" value={percentual} onChange={(e) => setPercentual(e.target.value)} className="w-full h-14 pl-6 pr-10 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" />
-                                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+                                    <span className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">%</span>
                                 </div>
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Prazo (Meses)</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Prazo (Meses)</label>
                             <input type="number" value={meses} onChange={(e) => setMeses(e.target.value)} className="w-full h-14 px-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white text-center transition-all shadow-sm" />
                         </div>
                     </div>
@@ -108,7 +108,7 @@ export function CalculadoraRendaFixa() {
                                 <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <DollarSign className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Rendimento Bruto</p>
+                                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Rendimento Bruto</p>
                                 <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">{formatarMoeda(resultado.rendimentoBruto)}</p>
                             </div>
                         </div>
@@ -129,7 +129,7 @@ export function CalculadoraRendaFixa() {
                                 <Info className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Simulação Pendente</h3>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Compare CDB, LCI e LCA com diferentes taxas.</p>
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Compare CDB, LCI e LCA com diferentes taxas.</p>
                         </div>
                     )}
                 </div>

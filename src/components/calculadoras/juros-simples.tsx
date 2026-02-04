@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { calcularJurosSimples, formatarMoeda, formatarPercentual } from "@/lib/calculadoras";
@@ -24,27 +24,27 @@ export function CalculadoraJurosSimples() {
                             <TrendingUp className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Simulador</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Simulador</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Juros Simples</h2>
                         </div>
                     </div>
                     <div className="space-y-6">
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Capital Inicial</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Capital Inicial</label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input type="number" value={capital} onChange={(e) => setCapital(e.target.value)} className="w-full h-14 pl-12 pr-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" />
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Taxa Mensal</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Taxa Mensal</label>
                             <div className="relative">
                                 <input type="number" value={taxa} onChange={(e) => setTaxa(e.target.value)} className="w-full h-14 pl-6 pr-12 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" step="0.1" />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">%</span>
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Período (Meses)</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Período (Meses)</label>
                             <input type="number" value={meses} onChange={(e) => setMeses(e.target.value)} className="w-full h-14 px-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white text-center transition-all shadow-sm" />
                         </div>
                     </div>
@@ -71,7 +71,7 @@ export function CalculadoraJurosSimples() {
                                 <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <DollarSign className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Capital Inicial</p>
+                                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Capital Inicial</p>
                                 <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">{formatarMoeda(Number(capital))}</p>
                             </div>
                             <div className="bg-emerald-50 dark:bg-emerald-900/20 p-7 rounded-[2rem] border border-emerald-100 dark:border-emerald-800/30">
@@ -85,7 +85,7 @@ export function CalculadoraJurosSimples() {
                                 <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <Percent className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Rendimento Total</p>
+                                <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Rendimento Total</p>
                                 <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">{formatarPercentual(resultado.totalJuros / Number(capital))}</p>
                             </div>
                         </div>
@@ -106,7 +106,7 @@ export function CalculadoraJurosSimples() {
                                 <Info className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Simulação Pendente</h3>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Fórmula: J = C × i × n</p>
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Fórmula: J = C × i × n</p>
                         </div>
                     )}
                 </div>

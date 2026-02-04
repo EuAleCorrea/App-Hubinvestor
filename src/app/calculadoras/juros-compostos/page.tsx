@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { CalculadoraJurosCompostos } from "@/components/calculadoras";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 
@@ -19,7 +19,7 @@ export default function JurosCompostosPage() {
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                     Juros Compostos
                 </h1>
-                <p className="text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
                     Acompanhe o crescimento acelerado do seu capital ao longo do tempo com o poder dos juros compostos.
                 </p>
             </header>

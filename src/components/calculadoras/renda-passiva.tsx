@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { calcularRendaPassiva, formatarMoeda, formatarPercentual } from "@/lib/calculadoras";
@@ -27,18 +27,18 @@ export function CalculadoraRendaPassiva() {
                             <PiggyBank className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Configuração</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Configuração</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Renda Passiva</h2>
                         </div>
                     </div>
 
                     <div className="space-y-8">
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
                                 Patrimônio Acumulado
                             </label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input
                                     type="number"
                                     value={patrimonio}
@@ -50,7 +50,7 @@ export function CalculadoraRendaPassiva() {
                         </div>
 
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
                                 Taxa de Retirada Anual
                             </label>
                             <div className="relative">
@@ -62,9 +62,9 @@ export function CalculadoraRendaPassiva() {
                                     placeholder="4"
                                     step="0.5"
                                 />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">%</span>
                             </div>
-                            <p className="text-xs text-slate-400 mt-2 ml-1">Regra dos 4% é o padrão FIRE seguro</p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 ml-1">Regra dos 4% é o padrão FIRE seguro</p>
                         </div>
                     </div>
 
@@ -106,7 +106,7 @@ export function CalculadoraRendaPassiva() {
                                     <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                         <Calendar className="w-6 h-6" />
                                     </div>
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Renda Anual</p>
+                                    <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Renda Anual</p>
                                     <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">
                                         {formatarMoeda(resultado.rendaAnual)}
                                     </p>
@@ -116,9 +116,9 @@ export function CalculadoraRendaPassiva() {
                                     <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-600 mb-5">
                                         <TrendingUp className="w-6 h-6" />
                                     </div>
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Taxa Utilizada</p>
+                                    <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Taxa Utilizada</p>
                                     <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">
-                                        {formatarPercentual(resultado.taxaUtilizada)} <span className="text-sm font-medium text-slate-400">ao ano</span>
+                                        {formatarPercentual(resultado.taxaUtilizada)} <span className="text-sm font-medium text-slate-500 dark:text-slate-400">ao ano</span>
                                     </p>
                                 </div>
 
@@ -126,7 +126,7 @@ export function CalculadoraRendaPassiva() {
                                     <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-primary mb-5">
                                         <Wallet className="w-6 h-6" />
                                     </div>
-                                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Patrimônio Base</p>
+                                    <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Patrimônio Base</p>
                                     <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">
                                         {formatarMoeda(Number(patrimonio))}
                                     </p>
@@ -155,7 +155,7 @@ export function CalculadoraRendaPassiva() {
                                 <Info className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Simulação Pendente</h3>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">
                                 Informe seu patrimônio acumulado para descobrir quanto pode sacar mensalmente sem comprometer sua independência financeira.
                             </p>
                         </div>

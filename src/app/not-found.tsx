@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { Calculator, ArrowLeft, Search, Home } from "lucide-react";
 
 export default function NotFound() {
@@ -18,7 +18,7 @@ export default function NotFound() {
                     Conteúdo em <span className="text-primary">Evolução</span>
                 </h1>
 
-                <p className="text-lg text-slate-500 dark:text-slate-400 mb-12 max-w-lg mx-auto leading-relaxed">
+                <p className="text-lg text-slate-500 dark:text-slate-500 dark:text-slate-400 mb-12 max-w-lg mx-auto leading-relaxed">
                     O HubInvestor mudou para uma nova plataforma de inteligência financeira. O link que você buscou pode ter sido atualizado ou movido.
                 </p>
 

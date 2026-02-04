@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraIndependenciaFinanceira } from "@/components/calculadoras/independencia-financeira";
 
@@ -19,7 +19,7 @@ export default function IndependenciaFinanceiraPage() {
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                     Independência Financeira
                 </h1>
-                <p className="text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
                     Descubra seu número FIRE: o patrimônio necessário para cobrir suas despesas e alcançar a liberdade financeira.
                 </p>
             </header>

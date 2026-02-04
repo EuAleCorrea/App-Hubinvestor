@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraAposentadoria } from "@/components/calculadoras/aposentadoria";
 
@@ -19,7 +19,7 @@ export default function AposentadoriaPage() {
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                     Aposentadoria
                 </h1>
-                <p className="text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
                     Descubra quanto precisa investir mensalmente para garantir a renda desejada na terceira idade.
                 </p>
             </header>

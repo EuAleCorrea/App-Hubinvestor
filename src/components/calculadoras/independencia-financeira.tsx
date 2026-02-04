@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { calcularIndependenciaFinanceira, formatarMoeda, formatarPercentual } from "@/lib/calculadoras";
@@ -29,18 +29,18 @@ export function CalculadoraIndependenciaFinanceira() {
                             <Shield className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Configuração</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Configuração</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Número FIRE</h2>
                         </div>
                     </div>
 
                     <div className="space-y-8">
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
                                 Despesas Mensais
                             </label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input
                                     type="number"
                                     value={despesasMensais}
@@ -49,11 +49,11 @@ export function CalculadoraIndependenciaFinanceira() {
                                     placeholder="5.000"
                                 />
                             </div>
-                            <p className="text-xs text-slate-400 mt-2 ml-1">Quanto você gasta por mês atualmente</p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 ml-1">Quanto você gasta por mês atualmente</p>
                         </div>
 
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
                                 Taxa de Retirada Anual
                             </label>
                             <div className="relative">
@@ -65,9 +65,9 @@ export function CalculadoraIndependenciaFinanceira() {
                                     placeholder="4"
                                     step="0.5"
                                 />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">%</span>
                             </div>
-                            <p className="text-xs text-slate-400 mt-2 ml-1">Múltiplo resultante: <span className="font-bold text-primary">{multiplo.toFixed(0)}x</span></p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 ml-1">Múltiplo resultante: <span className="font-bold text-primary">{multiplo.toFixed(0)}x</span></p>
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@ export function CalculadoraIndependenciaFinanceira() {
                                     <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter">
                                         {formatarMoeda(resultado.patrimonioNecessario)}
                                     </h1>
-                                    <p className="text-slate-400 font-medium mt-4 max-w-md">
+                                    <p className="text-slate-500 dark:text-slate-400 font-medium mt-4 max-w-md">
                                         Patrimônio necessário para cobrir suas despesas indefinidamente com a taxa de retirada escolhida.
                                     </p>
                                 </div>
@@ -109,7 +109,7 @@ export function CalculadoraIndependenciaFinanceira() {
                                     <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                         <Wallet className="w-6 h-6" />
                                     </div>
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Despesas Anuais</p>
+                                    <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Despesas Anuais</p>
                                     <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">
                                         {formatarMoeda(resultado.despesasAnuais)}
                                     </p>
@@ -119,9 +119,9 @@ export function CalculadoraIndependenciaFinanceira() {
                                     <div className="w-12 h-12 bg-emerald-500/10 rounded-2xl flex items-center justify-center text-emerald-600 mb-5">
                                         <TrendingUp className="w-6 h-6" />
                                     </div>
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Taxa de Retirada</p>
+                                    <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Taxa de Retirada</p>
                                     <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">
-                                        {formatarPercentual(resultado.taxaUtilizada)} <span className="text-sm font-medium text-slate-400">ao ano</span>
+                                        {formatarPercentual(resultado.taxaUtilizada)} <span className="text-sm font-medium text-slate-500 dark:text-slate-400">ao ano</span>
                                     </p>
                                 </div>
 
@@ -152,7 +152,7 @@ export function CalculadoraIndependenciaFinanceira() {
                                         "Considere inflação e gastos de saúde futuros"
                                     ].map((item, index) => (
                                         <div key={index} className="flex items-center gap-3 text-slate-600 dark:text-slate-300">
-                                            <CheckCircle2 className="w-5 h-5 text-emerald-500 flex-shrink-0" />
+                                            <CheckCircle2 className="w-5 h-5 text-emerald-600 flex-shrink-0" />
                                             <span className="text-sm">{item}</span>
                                         </div>
                                     ))}
@@ -165,7 +165,7 @@ export function CalculadoraIndependenciaFinanceira() {
                                 <Info className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Descubra seu Número FIRE</h3>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">
                                 Informe suas despesas mensais para calcular o patrimônio necessário para alcançar a independência financeira.
                             </p>
                         </div>

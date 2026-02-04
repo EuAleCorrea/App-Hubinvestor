@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { formatarMoeda } from "@/lib/calculadoras";
@@ -25,30 +25,30 @@ export function CalculadoraReservaEmergencia() {
                             <Shield className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Segurança</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Segurança</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Reserva de Emergência</h2>
                         </div>
                     </div>
                     <div className="space-y-6">
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Gasto Mensal</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Gasto Mensal</label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input type="number" value={gastoMensal} onChange={(e) => setGastoMensal(e.target.value)} className="w-full h-14 pl-12 pr-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" />
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Meses de Reserva</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Meses de Reserva</label>
                             <div className="flex gap-2">
                                 {[3, 6, 12].map((m) => (
-                                    <button key={m} onClick={() => setMesesReserva(m.toString())} className={`flex-1 py-3 rounded-xl text-sm font-black transition-all ${Number(mesesReserva) === m ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}>{m} meses</button>
+                                    <button key={m} onClick={() => setMesesReserva(m.toString())} className={`flex-1 py-3 rounded-xl text-sm font-black transition-all ${Number(mesesReserva) === m ? 'bg-primary text-white shadow-lg shadow-primary/20' : 'bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'}`}>{m} meses</button>
                                 ))}
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Reserva Atual</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Reserva Atual</label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input type="number" value={reservaAtual} onChange={(e) => setReservaAtual(e.target.value)} className="w-full h-14 pl-12 pr-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" />
                             </div>
                         </div>
@@ -68,7 +68,7 @@ export function CalculadoraReservaEmergencia() {
                     </div>
                     <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card">
                         <div className="flex items-center justify-between mb-4">
-                            <span className="text-sm font-bold text-slate-600 dark:text-slate-400">Progresso</span>
+                            <span className="text-sm font-bold text-slate-600 dark:text-slate-500 dark:text-slate-400">Progresso</span>
                             <span className={`text-sm font-black ${statusColor}`}>{status}</span>
                         </div>
                         <div className="h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
@@ -81,7 +81,7 @@ export function CalculadoraReservaEmergencia() {
                             <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                 <DollarSign className="w-6 h-6" />
                             </div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Já Acumulado</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Já Acumulado</p>
                             <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">{formatarMoeda(reservaAtualNum)}</p>
                         </div>
                         <div className={`p-7 rounded-[2rem] ${falta > 0 ? 'bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-800/30' : 'bg-emerald-50 dark:bg-emerald-900/20 border border-emerald-100 dark:border-emerald-800/30'}`}>
@@ -95,7 +95,7 @@ export function CalculadoraReservaEmergencia() {
                             <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                 <Calendar className="w-6 h-6" />
                             </div>
-                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Cobertura</p>
+                            <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Cobertura</p>
                             <p className="text-2xl font-black text-white tabular-nums">{mesesReserva} meses</p>
                         </div>
                     </div>

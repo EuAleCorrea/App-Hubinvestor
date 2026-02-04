@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { calcularFinanciamentoSAC, formatarMoeda, formatarPercentual } from "@/lib/calculadoras";
@@ -46,32 +46,32 @@ export function CalculadoraFinanciamentoSAC() {
                             <Building2 className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Simulador</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Simulador</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Tabela SAC</h2>
                         </div>
                     </div>
                     <div className="space-y-6">
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Valor Financiado</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Valor Financiado</label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input type="number" value={valorFinanciado} onChange={(e) => setValorFinanciado(e.target.value)} className="w-full h-14 pl-12 pr-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" placeholder="300.000" />
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Taxa de Juros Mensal</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Taxa de Juros Mensal</label>
                             <div className="relative">
                                 <input type="number" value={taxaMensal} onChange={(e) => setTaxaMensal(e.target.value)} className="w-full h-14 pl-6 pr-12 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" placeholder="0.9" step="0.1" />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">%</span>
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Prazo (Meses)</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Prazo (Meses)</label>
                             <div className="relative">
                                 <input type="number" value={prazoMeses} onChange={(e) => setPrazoMeses(e.target.value)} className="w-full h-14 pl-6 pr-16 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" placeholder="360" />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-400 uppercase tracking-widest">Meses</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Meses</span>
                             </div>
-                            <p className="text-xs text-slate-400 mt-2 ml-1">{Math.floor(Number(prazoMeses || 0) / 12)} anos</p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 ml-1">{Math.floor(Number(prazoMeses || 0) / 12)} anos</p>
                         </div>
                     </div>
                     <button onClick={handleCalcular} className="w-full mt-10 h-14 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-primary-hover transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95">
@@ -85,7 +85,7 @@ export function CalculadoraFinanciamentoSAC() {
                             <div className="bg-slate-900 p-8 rounded-[2rem] shadow-xl relative overflow-hidden">
                                 <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2">Primeira Parcela</p>
                                 <h2 className="text-4xl font-black text-white tracking-tighter">{formatarMoeda(resultado.primeiraParcela)}</h2>
-                                <div className="mt-4 flex items-center gap-2 text-slate-400 text-sm">
+                                <div className="mt-4 flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
                                     <ArrowDown className="w-4 h-4 text-primary" />
                                     Parcelas decrescem mensalmente
                                 </div>
@@ -104,7 +104,7 @@ export function CalculadoraFinanciamentoSAC() {
                                 <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <Banknote className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Total Pago</p>
+                                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Total Pago</p>
                                 <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">{formatarMoeda(resultado.totalPago)}</p>
                             </div>
                             <div className="bg-rose-50 dark:bg-rose-900/20 p-7 rounded-[2rem] border border-rose-100 dark:border-rose-800/30">
@@ -118,7 +118,7 @@ export function CalculadoraFinanciamentoSAC() {
                                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <PieChart className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">% de Juros</p>
+                                <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">% de Juros</p>
                                 <p className="text-2xl font-black text-white tabular-nums">{formatarPercentual(resultado.totalJuros / Number(valorFinanciado))}</p>
                             </div>
                         </div>
@@ -140,7 +140,7 @@ export function CalculadoraFinanciamentoSAC() {
                                             if (active && payload && payload.length) {
                                                 return (
                                                     <div className="bg-white dark:bg-slate-800 p-4 shadow-lg rounded-xl border border-slate-100 dark:border-slate-700 text-left">
-                                                        <p className="text-[10px] font-black text-slate-400 uppercase mb-2">Mês {label}</p>
+                                                        <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mb-2">Mês {label}</p>
                                                         <p className="text-lg font-black text-primary">{formatarMoeda(Number(payload[0]?.value))}</p>
                                                     </div>
                                                 );
@@ -169,7 +169,7 @@ export function CalculadoraFinanciamentoSAC() {
                                 <Info className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Simulação Pendente</h3>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Configure o valor, taxa e prazo para visualizar as parcelas decrescentes do sistema SAC.</p>
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Configure o valor, taxa e prazo para visualizar as parcelas decrescentes do sistema SAC.</p>
                         </div>
                     )}
                 </div>

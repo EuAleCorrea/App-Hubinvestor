@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { Wallet, ArrowLeft } from "lucide-react";
 
@@ -39,7 +39,7 @@ export default function TermosPage() {
                 </h1>
 
                 <div className="prose prose-slate dark:prose-invert max-w-none">
-                    <p className="text-slate-500 dark:text-slate-400 text-sm mb-8">
+                    <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 text-sm mb-8">
                         Última atualização: Fevereiro de 2026
                     </p>
 

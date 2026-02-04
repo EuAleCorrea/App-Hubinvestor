@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -41,7 +41,7 @@ function SidebarItem({ href, icon: Icon, label, active, onClick }: SidebarItemWi
                 "flex items-center gap-3 px-4 py-3 min-h-[48px] rounded-xl font-medium transition-all duration-200 group",
                 active
                     ? "bg-primary text-white shadow-premium"
-                    : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                    : "text-slate-600 dark:text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
             )}
         >
             <Icon className={cn("w-5 h-5", active ? "text-white" : "text-slate-500 group-hover:text-primary transition-colors")} />
@@ -89,7 +89,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                 <div className="p-4 mt-auto">
                     <div className="bg-primary/5 dark:bg-primary/10 p-5 rounded-3xl border border-primary/10">
                         <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-1 text-left">Upgrade Plan</p>
-                        <p className="text-sm text-slate-600 dark:text-slate-400 mb-3 text-left">Tenha análises avançadas de portfólio hoje.</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-500 dark:text-slate-400 mb-3 text-left">Tenha análises avançadas de portfólio hoje.</p>
                         <button className="w-full py-2.5 bg-primary text-white text-xs font-bold rounded-xl hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20">
                             Saiba Mais
                         </button>
@@ -113,7 +113,8 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                 </Link>
                 <button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    className="min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl"
+                    aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+                    className="min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-600 dark:text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl"
                 >
                     {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
@@ -124,7 +125,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                 {/* Topbar */}
                 <header className="h-20 hidden lg:flex items-center justify-between px-8 border-b border-slate-200 dark:border-slate-800 shrink-0">
                     <div className="relative group flex-1 max-w-md">
-                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 w-4 h-4 transition-colors group-focus-within:text-primary" />
+                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 w-4 h-4 transition-colors group-focus-within:text-primary" />
                         <input
                             type="text"
                             placeholder="Buscar ativos ou cálculos..."
@@ -133,7 +134,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                     </div>
 
                     <div className="flex items-center gap-4">
-                        <button className="p-2.5 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl transition-all relative">
+                        <button aria-label="Notificações" className="p-2.5 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl transition-all relative">
                             <Bell className="w-5 h-5" />
                             <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
                         </button>
@@ -143,7 +144,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                         <div className="flex items-center gap-3 pl-2">
                             <div className="text-right hidden sm:block">
                                 <p className="text-sm font-bold text-slate-900 dark:text-white leading-none mb-1 text-left">Vincentius</p>
-                                <p className="text-[10px] font-medium text-slate-400 text-left">Free Plan</p>
+                                <p className="text-[10px] font-medium text-slate-500 dark:text-slate-400 text-left">Free Plan</p>
                             </div>
                             <div className="w-10 h-10 rounded-2xl overflow-hidden border-2 border-white dark:border-slate-800 shadow-sm ring-2 ring-slate-100 dark:ring-slate-800">
                                 <img
@@ -176,7 +177,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                                 <Wallet className="w-7 h-7" />
                                 <span className="text-xl font-bold tracking-tight">HubInvestor</span>
                             </Link>
-                            <button onClick={() => setIsMobileMenuOpen(false)} className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
+                            <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Fechar menu" className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800">
                                 <X className="w-6 h-6" />
                             </button>
                         </div>
@@ -195,7 +196,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                         <div className="p-4 mt-auto border-t border-slate-100 dark:border-slate-800">
                             <div className="bg-primary/5 dark:bg-primary/10 p-4 rounded-2xl border border-primary/10 mb-3">
                                 <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-1">Upgrade Plan</p>
-                                <p className="text-xs text-slate-600 dark:text-slate-400 mb-3">Tenha análises avançadas de portfólio hoje.</p>
+                                <p className="text-xs text-slate-600 dark:text-slate-500 dark:text-slate-400 mb-3">Tenha análises avançadas de portfólio hoje.</p>
                                 <button className="w-full min-h-[44px] py-2.5 bg-primary text-white text-xs font-bold rounded-xl hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20">
                                     Saiba Mais
                                 </button>

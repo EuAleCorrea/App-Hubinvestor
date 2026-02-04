@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { calcularAposentadoria, formatarMoeda, formatarPercentual } from "@/lib/calculadoras";
@@ -34,40 +34,40 @@ export function CalculadoraAposentadoria() {
                             <Users className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Planejamento</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Planejamento</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Aposentadoria</h2>
                         </div>
                     </div>
                     <div className="space-y-5">
                         <div className="grid grid-cols-2 gap-4">
                             <div className="group">
-                                <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Idade Atual</label>
+                                <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Idade Atual</label>
                                 <input type="number" value={idadeAtual} onChange={(e) => setIdadeAtual(e.target.value)} className="w-full h-14 px-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white text-center transition-all shadow-sm" />
                             </div>
                             <div className="group">
-                                <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Aposentar</label>
+                                <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Aposentar</label>
                                 <input type="number" value={idadeAposentadoria} onChange={(e) => setIdadeAposentadoria(e.target.value)} className="w-full h-14 px-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white text-center transition-all shadow-sm" />
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Renda Desejada</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Renda Desejada</label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input type="number" value={rendaDesejada} onChange={(e) => setRendaDesejada(e.target.value)} className="w-full h-14 pl-12 pr-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" />
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Patrimônio Atual</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Patrimônio Atual</label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input type="number" value={patrimonioAtual} onChange={(e) => setPatrimonioAtual(e.target.value)} className="w-full h-14 pl-12 pr-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" />
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Rentabilidade Mensal</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1">Rentabilidade Mensal</label>
                             <div className="relative">
                                 <input type="number" value={taxaMensal} onChange={(e) => setTaxaMensal(e.target.value)} className="w-full h-14 pl-6 pr-12 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" step="0.1" />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">%</span>
                             </div>
                         </div>
                     </div>
@@ -94,7 +94,7 @@ export function CalculadoraAposentadoria() {
                                 <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <Target className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Patrimônio Necessário</p>
+                                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Patrimônio Necessário</p>
                                 <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">{formatarMoeda(resultado.patrimonioNecessario)}</p>
                             </div>
                             <div className="bg-emerald-50 dark:bg-emerald-900/20 p-7 rounded-[2rem] border border-emerald-100 dark:border-emerald-800/30">
@@ -109,7 +109,7 @@ export function CalculadoraAposentadoria() {
                                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <Clock className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Tempo Restante</p>
+                                <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Tempo Restante</p>
                                 <p className="text-2xl font-black text-white tabular-nums">{resultado.mesesAteAposentadoria} meses</p>
                                 <p className="text-xs text-slate-500 mt-1">{anosRestantes} anos</p>
                             </div>
@@ -141,7 +141,7 @@ export function CalculadoraAposentadoria() {
                                 <Info className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Simulação Pendente</h3>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Informe sua idade e renda desejada para descobrir quanto investir por mês.</p>
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Informe sua idade e renda desejada para descobrir quanto investir por mês.</p>
                         </div>
                     )}
                 </div>

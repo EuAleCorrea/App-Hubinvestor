@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import {
@@ -150,14 +150,14 @@ export default function LandingPage() {
                         <span className="text-primary block md:inline"> Calculadoras</span>
                     </h1>
 
-                    <p className="text-xl text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed mb-14">
+                    <p className="text-xl text-slate-500 dark:text-slate-500 dark:text-slate-400 max-w-2xl mx-auto font-medium leading-relaxed mb-14">
                         Ferramentas de análise profissional para potencializar seus resultados. Simule investimentos, planeje sua aposentadoria e alcance a liberdade financeira.
                     </p>
 
                     {/* Barra de Busca */}
                     <div className="relative max-w-2xl mx-auto group">
                         <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none">
-                            <Search className="w-5 h-5 text-slate-400 group-focus-within:text-primary transition-colors" />
+                            <Search className="w-5 h-5 text-slate-500 dark:text-slate-400 group-focus-within:text-primary transition-colors" />
                         </div>
                         <input
                             type="text"
@@ -173,7 +173,7 @@ export default function LandingPage() {
                 <div className="flex flex-wrap justify-center gap-3">
                     <button className="px-8 py-3 rounded-full bg-primary text-white text-sm font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Todas</button>
                     {["Investimentos", "Planejamento", "Metas", "Pessoal"].map((cat) => (
-                        <button key={cat} className="px-8 py-3 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 text-sm font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all">
+                        <button key={cat} className="px-8 py-3 rounded-full bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-500 dark:text-slate-400 text-sm font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all">
                             {cat}
                         </button>
                     ))}
@@ -207,7 +207,7 @@ export default function LandingPage() {
                                     <h2 className="text-3xl font-black text-slate-900 dark:text-white mb-4 group-hover:text-primary transition-colors tracking-tight">
                                         {calc.nome}
                                     </h2>
-                                    <p className="text-base text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
+                                    <p className="text-base text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-8">
                                         {calc.descricao}
                                     </p>
                                 </div>
@@ -232,7 +232,7 @@ export default function LandingPage() {
                     <div className="text-center mb-20">
                         <h2 className="text-4xl md:text-5xl font-black mb-4 tracking-tight text-slate-900 dark:text-white [word-spacing:0.1em]">Como Funciona</h2>
                         <div className="w-20 h-1.5 bg-primary rounded-full mx-auto mb-6"></div>
-                        <p className="text-slate-500 dark:text-slate-400 font-medium text-lg">Três passos simples para dominar suas finanças.</p>
+                        <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium text-lg">Três passos simples para dominar suas finanças.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-16 text-center">
@@ -246,7 +246,7 @@ export default function LandingPage() {
                                     {item.step}
                                 </div>
                                 <h3 className="text-xl font-black mb-4 text-slate-900 dark:text-white tracking-tight">{item.title}</h3>
-                                <p className="text-slate-500 dark:text-slate-400 font-medium leading-relaxed px-4">{item.desc}</p>
+                                <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium leading-relaxed px-4">{item.desc}</p>
                             </div>
                         ))}
                     </div>
@@ -259,7 +259,7 @@ export default function LandingPage() {
                     <h2 className="text-4xl md:text-5xl font-black mb-6 tracking-tight text-slate-900 dark:text-white [word-spacing:0.1em]">
                         Pronto para começar?
                     </h2>
-                    <p className="text-xl text-slate-500 dark:text-slate-400 mb-10 font-medium">
+                    <p className="text-xl text-slate-500 dark:text-slate-500 dark:text-slate-400 mb-10 font-medium">
                         Acesse gratuitamente todas as nossas ferramentas e domine suas finanças hoje.
                     </p>
                     <Link href="/" className="inline-flex items-center gap-3 bg-primary hover:bg-primary/90 text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest transition-all transform hover:scale-105 shadow-2xl shadow-primary/30">
@@ -279,7 +279,7 @@ export default function LandingPage() {
                             </div>
                             <span className="text-2xl font-black tracking-tighter">HubInvestor</span>
                         </div>
-                        <p className="text-slate-400 text-sm font-medium text-center md:text-right max-w-md">
+                        <p className="text-slate-500 dark:text-slate-400 text-sm font-medium text-center md:text-right max-w-md">
                             Democratizando o acesso a ferramentas financeiras de elite para todos os brasileiros.
                         </p>
                     </div>

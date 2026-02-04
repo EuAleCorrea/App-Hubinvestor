@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { calcularJurosCompostos, formatarMoeda, formatarPercentual } from "@/lib/calculadoras";
@@ -39,18 +39,18 @@ export function CalculadoraJurosCompostos() {
                             <Calculator className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Configuração</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Configuração</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Simulação</h2>
                         </div>
                     </div>
 
                     <div className="space-y-8">
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
                                 Capital Inicial
                             </label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input
                                     type="number"
                                     value={capitalInicial}
@@ -62,7 +62,7 @@ export function CalculadoraJurosCompostos() {
                         </div>
 
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
                                 Taxa de Juros Mensal
                             </label>
                             <div className="relative">
@@ -73,12 +73,12 @@ export function CalculadoraJurosCompostos() {
                                     className="w-full h-14 pl-6 pr-12 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm"
                                     placeholder="1"
                                 />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-400 font-bold">%</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">%</span>
                             </div>
                         </div>
 
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">
                                 Período Total
                             </label>
                             <div className="relative">
@@ -89,7 +89,7 @@ export function CalculadoraJurosCompostos() {
                                     className="w-full h-14 pl-6 pr-16 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm"
                                     placeholder="12"
                                 />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-400 uppercase tracking-widest">Meses</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Meses</span>
                             </div>
                         </div>
                     </div>
@@ -123,13 +123,13 @@ export function CalculadoraJurosCompostos() {
                                                 <span className="bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 px-3 py-1.5 rounded-xl text-xs font-black uppercase tracking-widest flex items-center gap-1.5">
                                                     <ArrowUp className="w-3.5 h-3.5" /> Lucro: {formatarMoeda(resultado.totalJuros)}
                                                 </span>
-                                                <span className="bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 px-3 py-1.5 rounded-xl text-xs font-bold tabular-nums">
+                                                <span className="bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-500 dark:text-slate-400 px-3 py-1.5 rounded-xl text-xs font-bold tabular-nums">
                                                     Rentabilidade: {formatarPercentual(resultado.totalJuros / Number(capitalInicial))}
                                                 </span>
                                             </div>
                                         </div>
                                         <div className="bg-slate-50 dark:bg-slate-800 px-6 py-4 rounded-2xl border border-slate-100 dark:border-slate-700">
-                                            <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1.5">Aporte Investido</p>
+                                            <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-1.5">Aporte Investido</p>
                                             <p className="text-xl font-black text-slate-700 dark:text-slate-200">{formatarMoeda(Number(capitalInicial))}</p>
                                         </div>
                                     </div>
@@ -145,7 +145,7 @@ export function CalculadoraJurosCompostos() {
                                         <Target className="w-7 h-7" />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1">Ganho Médio Mensal</p>
+                                        <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-1">Ganho Médio Mensal</p>
                                         <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">
                                             {formatarMoeda(resultado.totalJuros / Number(meses))}
                                         </p>
@@ -156,7 +156,7 @@ export function CalculadoraJurosCompostos() {
                                         <TrendingUp className="w-7 h-7" />
                                     </div>
                                     <div>
-                                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Taxa Efetiva Anual</p>
+                                        <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-1">Taxa Efetiva Anual</p>
                                         <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">
                                             {formatarPercentual(Math.pow(1 + Number(taxaMensal) / 100, 12) - 1)}
                                         </p>
@@ -169,7 +169,7 @@ export function CalculadoraJurosCompostos() {
                                 <div className="flex items-center justify-between mb-10">
                                     <h3 className="text-xl font-bold text-slate-900 dark:text-white tracking-tight">Evolução do Patrimônio</h3>
                                     <div className="flex items-center gap-4">
-                                        <div className="flex items-center gap-2 text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                                        <div className="flex items-center gap-2 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">
                                             <span className="w-2.5 h-2.5 bg-primary rounded-full"></span>
                                             Montante Total
                                         </div>
@@ -206,7 +206,7 @@ export function CalculadoraJurosCompostos() {
                                                     if (active && payload && payload.length) {
                                                         return (
                                                             <div className="bg-white dark:bg-slate-800 p-5 shadow-premium rounded-2xl border border-slate-100 dark:border-slate-700 text-left min-w-[180px]">
-                                                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">Mês {label}</p>
+                                                                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-1.5">Mês {label}</p>
                                                                 <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums mb-1">{formatarMoeda(Number(payload[0].value))}</p>
                                                                 <div className="flex items-center gap-1.5 text-primary font-black text-[10px] uppercase tracking-widest border-t border-slate-50 dark:border-slate-700 mt-2 pt-2">
                                                                     <ArrowUpRight className="w-3.5 h-3.5" /> Projetado
@@ -237,7 +237,7 @@ export function CalculadoraJurosCompostos() {
                                 <Info className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Simulação Pendente</h3>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">
                                 Configure os parâmetros de capital e tempo para gerar sua projeção patrimonial no modelo <span className="text-primary font-bold">HubInvestor</span>.
                             </p>
                         </div>

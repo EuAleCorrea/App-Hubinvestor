@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraRendaPassiva } from "@/components/calculadoras/renda-passiva";
 
@@ -19,7 +19,7 @@ export default function RendaPassivaPage() {
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                     Renda Passiva
                 </h1>
-                <p className="text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
                     Descubra quanto você pode sacar mensalmente do seu patrimônio sem comprometer sua independência financeira.
                 </p>
             </header>

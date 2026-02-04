@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraJurosSimples } from "@/components/calculadoras/juros-simples";
 
@@ -19,7 +19,7 @@ export default function JurosSimplesPage() {
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                     Juros Simples
                 </h1>
-                <p className="text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
                     Calcule o rendimento com juros simples, onde os juros incidem apenas sobre o capital inicial.
                 </p>
             </header>

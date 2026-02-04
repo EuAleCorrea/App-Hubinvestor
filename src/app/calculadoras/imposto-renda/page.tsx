@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraImpostoRenda } from "@/components/calculadoras/imposto-renda";
 
@@ -19,7 +19,7 @@ export default function ImpostoRendaPage() {
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                     Imposto de Renda sobre Investimentos
                 </h1>
-                <p className="text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
                     Calcule o imposto de renda sobre rendimentos de renda fixa usando a tabela regressiva.
                 </p>
             </header>

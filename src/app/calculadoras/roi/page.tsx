@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraROI } from "@/components/calculadoras/roi";
 
@@ -19,7 +19,7 @@ export default function ROIPage() {
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                     Retorno sobre Investimento (ROI)
                 </h1>
-                <p className="text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
                     Meça a eficiência e lucratividade dos seus investimentos de forma rápida e precisa.
                 </p>
             </header>

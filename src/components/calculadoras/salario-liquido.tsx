@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { calcularSalarioLiquido, formatarMoeda } from "@/lib/calculadoras";
@@ -23,20 +23,20 @@ export function CalculadoraSalarioLiquido() {
                             <Wallet className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Calculadora</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Calculadora</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">Salário Líquido</h2>
                         </div>
                     </div>
                     <div className="space-y-6">
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Salário Bruto</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Salário Bruto</label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input type="number" value={bruto} onChange={(e) => setBruto(e.target.value)} className="w-full h-14 pl-12 pr-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" />
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Dependentes</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Dependentes</label>
                             <input type="number" value={dependentes} onChange={(e) => setDependentes(e.target.value)} min="0" className="w-full h-14 px-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white text-center transition-all shadow-sm" />
                         </div>
                     </div>
@@ -45,9 +45,9 @@ export function CalculadoraSalarioLiquido() {
                         <ArrowUpRight className="w-4 h-4" />
                     </button>
                     <div className="mt-8 p-5 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
-                        <p className="text-[10px] font-black text-slate-400 uppercase mb-3">Tabelas 2024</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400">INSS: Alíquotas de 7,5% a 14%</p>
-                        <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">IRRF: Isento até R$ 2.259,20</p>
+                        <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mb-3">Tabelas 2024</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-500 dark:text-slate-400">INSS: Alíquotas de 7,5% a 14%</p>
+                        <p className="text-xs text-slate-600 dark:text-slate-500 dark:text-slate-400 mt-1">IRRF: Isento até R$ 2.259,20</p>
                     </div>
                 </div>
                 <div className="lg:col-span-8 flex flex-col gap-6 text-left">
@@ -68,7 +68,7 @@ export function CalculadoraSalarioLiquido() {
                                 <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <DollarSign className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Salário Bruto</p>
+                                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Salário Bruto</p>
                                 <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">{formatarMoeda(Number(bruto))}</p>
                             </div>
                             <div className="bg-rose-50 dark:bg-rose-900/20 p-7 rounded-[2rem] border border-rose-100 dark:border-rose-800/30">
@@ -83,7 +83,7 @@ export function CalculadoraSalarioLiquido() {
                                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-rose-400 mb-5">
                                     <Receipt className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">IRRF</p>
+                                <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">IRRF</p>
                                 <p className="text-2xl font-black text-white tabular-nums">{formatarMoeda(resultado.irrf)}</p>
                                 <p className="text-xs text-slate-500 mt-1">Faixa: {resultado.faixaIRRF}</p>
                             </div>
@@ -91,7 +91,7 @@ export function CalculadoraSalarioLiquido() {
                         <div className="bg-white dark:bg-slate-900 p-7 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm">
                             <div className="flex items-center justify-between">
                                 <div>
-                                    <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Total de Descontos</p>
+                                    <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Total de Descontos</p>
                                     <p className="text-3xl font-black text-rose-600 dark:text-rose-400 tabular-nums">{formatarMoeda(resultado.totalDescontos)}</p>
                                 </div>
                                 <div className="bg-rose-50 dark:bg-rose-900/20 px-4 py-2 rounded-xl">
@@ -118,7 +118,7 @@ export function CalculadoraSalarioLiquido() {
                                 <Info className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Simulação Pendente</h3>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Descubra quanto você recebe após INSS e IRRF com as tabelas 2024.</p>
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Descubra quanto você recebe após INSS e IRRF com as tabelas 2024.</p>
                         </div>
                     )}
                 </div>

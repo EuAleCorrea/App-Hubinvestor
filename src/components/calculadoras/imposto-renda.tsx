@@ -1,14 +1,14 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { calcularBrutoLiquido, formatarMoeda, formatarPercentual } from "@/lib/calculadoras";
 import { Receipt, TrendingUp, Info, ArrowUpRight, Percent, Calendar, DollarSign } from "lucide-react";
 
 const FAIXAS_IR = [
-    { prazo: "Até 180 dias", aliquota: 22.5, cor: "text-red-500" },
-    { prazo: "181 a 360 dias", aliquota: 20, cor: "text-orange-500" },
-    { prazo: "361 a 720 dias", aliquota: 17.5, cor: "text-amber-500" },
-    { prazo: "Acima de 720 dias", aliquota: 15, cor: "text-emerald-500" },
+    { prazo: "Até 180 dias", aliquota: 22.5, cor: "text-red-600" },
+    { prazo: "De 181 a 360 dias", aliquota: 20, cor: "text-orange-600" },
+    { prazo: "De 361 a 720 dias", aliquota: 17.5, cor: "text-amber-600" },
+    { prazo: "Acima de 720 dias", aliquota: 15, cor: "text-emerald-700" },
 ];
 
 export function CalculadoraImpostoRenda() {
@@ -32,25 +32,25 @@ export function CalculadoraImpostoRenda() {
                             <Receipt className="w-6 h-6 text-primary" />
                         </div>
                         <div>
-                            <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest">Tributação</p>
+                            <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest">Tributação</p>
                             <h2 className="text-xl font-bold text-slate-900 dark:text-white">IR Investimentos</h2>
                         </div>
                     </div>
                     <div className="space-y-6">
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Rendimento Bruto</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Rendimento Bruto</label>
                             <div className="relative">
-                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-400 font-bold">R$</span>
+                                <span className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 font-bold">R$</span>
                                 <input type="number" value={valorBruto} onChange={(e) => setValorBruto(e.target.value)} className="w-full h-14 pl-12 pr-6 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" />
                             </div>
                         </div>
                         <div className="group">
-                            <label className="block text-[10px] font-black text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Prazo (Dias)</label>
+                            <label className="block text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-[0.15em] mb-3 ml-1 group-focus-within:text-primary transition-colors">Prazo (Dias)</label>
                             <div className="relative">
                                 <input type="number" value={dias} onChange={(e) => setDias(e.target.value)} className="w-full h-14 pl-6 pr-16 bg-slate-50 dark:bg-slate-800/50 border-slate-100 dark:border-slate-800 focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/40 rounded-2xl text-lg font-bold text-slate-900 dark:text-white transition-all shadow-sm" />
-                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-400 uppercase">Dias</span>
+                                <span className="absolute right-6 top-1/2 -translate-y-1/2 text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase">Dias</span>
                             </div>
-                            <p className="text-xs text-slate-400 mt-2 ml-1">≈ {mesesEquivalente} meses ({(mesesEquivalente / 12).toFixed(1)} anos)</p>
+                            <p className="text-xs text-slate-500 dark:text-slate-400 mt-2 ml-1">≈ {mesesEquivalente} meses ({(mesesEquivalente / 12).toFixed(1)} anos)</p>
                         </div>
                     </div>
                     <button onClick={handleCalcular} className="w-full mt-10 h-14 bg-primary text-white rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-primary-hover transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2 hover:scale-[1.02] active:scale-95">
@@ -58,9 +58,9 @@ export function CalculadoraImpostoRenda() {
                         <ArrowUpRight className="w-4 h-4" />
                     </button>
                     <div className="mt-8 p-5 bg-slate-50 dark:bg-slate-800/50 rounded-xl">
-                        <p className="text-[10px] font-black text-slate-400 uppercase mb-3">Tabela Regressiva IR</p>
+                        <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase mb-3">Tabela Regressiva IR</p>
                         <div className="space-y-2">
-                            {FAIXAS_IR.map((f, i) => (<div key={i} className="flex items-center justify-between text-sm"><span className="text-slate-600 dark:text-slate-400">{f.prazo}</span><span className={`font-bold ${f.cor}`}>{f.aliquota}%</span></div>))}
+                            {FAIXAS_IR.map((f, i) => (<div key={i} className="flex items-center justify-between text-sm"><span className="text-slate-600 dark:text-slate-500 dark:text-slate-400">{f.prazo}</span><span className={`font-bold ${f.cor}`}>{f.aliquota}%</span></div>))}
                         </div>
                     </div>
                 </div>
@@ -90,21 +90,21 @@ export function CalculadoraImpostoRenda() {
                                 <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <Percent className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Alíquota Aplicada</p>
+                                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Alíquota Aplicada</p>
                                 <p className="text-3xl font-black text-slate-900 dark:text-white tabular-nums">{formatarPercentual(resultado.aliquota)}</p>
                             </div>
                             <div className="bg-white dark:bg-slate-900 p-7 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm">
                                 <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <TrendingUp className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Rendimento Bruto</p>
+                                <p className="text-[10px] font-black text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Rendimento Bruto</p>
                                 <p className="text-2xl font-black text-slate-900 dark:text-white tabular-nums">{formatarMoeda(Number(valorBruto))}</p>
                             </div>
                             <div className="bg-slate-900 dark:bg-slate-800 p-7 rounded-[2rem] shadow-card">
                                 <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <Calendar className="w-6 h-6" />
                                 </div>
-                                <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-2">Prazo</p>
+                                <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Prazo</p>
                                 <p className="text-2xl font-black text-white tabular-nums">{dias} dias</p>
                             </div>
                         </div>
@@ -125,7 +125,7 @@ export function CalculadoraImpostoRenda() {
                                 <Info className="w-12 h-12 text-slate-300 dark:text-slate-600" />
                             </div>
                             <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">Calcule o IR</h3>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Informe o rendimento bruto e prazo em dias para calcular o imposto de renda.</p>
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium max-w-sm leading-relaxed">Informe o rendimento bruto e prazo em dias para calcular o imposto de renda.</p>
                         </div>
                     )}
                 </div>

@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraReservaEmergencia } from "@/components/calculadoras/reserva-emergencia";
 
@@ -19,7 +19,7 @@ export default function ReservaEmergenciaPage() {
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                     Reserva de Emergência
                 </h1>
-                <p className="text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
                     Calcule quanto precisa guardar para se proteger de imprevistos e crises.
                 </p>
             </header>

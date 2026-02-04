@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import { DashboardLayout } from "@/components/layout/dashboard-layout";
 import { CalculadoraFinanciamentoPrice } from "@/components/calculadoras/financiamento-price";
 
@@ -19,7 +19,7 @@ export default function FinanciamentoPricePage() {
                 <h1 className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
                     Tabela PRICE
                 </h1>
-                <p className="text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
+                <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium mt-2 max-w-2xl">
                     Simule seu financiamento com parcelas fixas e veja o detalhamento de amortização e juros mês a mês.
                 </p>
             </header>

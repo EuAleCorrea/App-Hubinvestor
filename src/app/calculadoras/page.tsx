@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import {
     Calculator,
@@ -140,7 +140,7 @@ export default function CalculadorasPage() {
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-10">
                         <div>
                             <h1 className="text-3xl font-black text-slate-900 dark:text-white tracking-tight">Calculadoras</h1>
-                            <p className="text-slate-500 dark:text-slate-400 font-medium mt-1">
+                            <p className="text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium mt-1">
                                 Ferramentas de precisão para suas decisões financeiras.
                             </p>
                         </div>
@@ -153,7 +153,7 @@ export default function CalculadorasPage() {
                     {/* Barra de Busca Simplificada */}
                     <div className="relative max-w-2xl group">
                         <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none">
-                            <Search className="w-5 h-5 text-slate-400 group-focus-within:text-primary transition-colors" />
+                            <Search className="w-5 h-5 text-slate-500 dark:text-slate-400 group-focus-within:text-primary transition-colors" />
                         </div>
                         <input
                             type="text"
@@ -168,7 +168,7 @@ export default function CalculadorasPage() {
                     <div className="flex gap-3 overflow-x-auto pb-2 -mx-6 px-6 md:mx-0 md:px-0 md:flex-wrap scrollbar-hide">
                         <button className="shrink-0 px-5 sm:px-8 py-3 min-h-[44px] rounded-full bg-primary text-white text-sm font-black uppercase tracking-widest shadow-lg shadow-primary/20 hover:scale-105 transition-transform">Todas</button>
                         {["Investimentos", "Planejamento", "Metas", "Análise", "Pessoal"].map((cat) => (
-                            <button key={cat} className="shrink-0 px-5 sm:px-8 py-3 min-h-[44px] rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-400 text-sm font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all whitespace-nowrap">
+                            <button key={cat} className="shrink-0 px-5 sm:px-8 py-3 min-h-[44px] rounded-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-slate-500 dark:text-slate-500 dark:text-slate-400 text-sm font-black uppercase tracking-widest hover:border-primary/40 hover:text-primary transition-all whitespace-nowrap">
                                 {cat}
                             </button>
                         ))}
@@ -199,7 +199,7 @@ export default function CalculadorasPage() {
                                             "w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center transition-all duration-500 group-hover:scale-110",
                                             isAtiva
                                                 ? "bg-primary/5 text-primary group-hover:bg-primary group-hover:text-white group-hover:rotate-3 shadow-sm"
-                                                : "bg-slate-100 dark:bg-slate-800 text-slate-400"
+                                                : "bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400"
                                         )}>
                                             <Icon className="w-6 h-6 sm:w-7 sm:h-7" />
                                         </div>
@@ -215,7 +215,7 @@ export default function CalculadorasPage() {
                                         <h2 className="text-xl sm:text-3xl font-black text-slate-900 dark:text-white mb-2 sm:mb-4 group-hover:text-primary transition-colors tracking-tight">
                                             {calc.nome}
                                         </h2>
-                                        <p className="text-sm sm:text-base text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-5 sm:mb-8">
+                                        <p className="text-sm sm:text-base text-slate-500 dark:text-slate-500 dark:text-slate-400 font-medium leading-relaxed mb-5 sm:mb-8">
                                             {calc.descricao}
                                         </p>
                                     </div>

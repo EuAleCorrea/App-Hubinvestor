@@ -41,6 +41,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 0.95,
         },
         {
+            url: `${baseUrl}/lp-old`,
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.5,
+        },
+        {
             url: `${baseUrl}/calculadoras`,
             lastModified: new Date(),
             changeFrequency: 'weekly',

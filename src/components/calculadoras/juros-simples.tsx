@@ -18,7 +18,7 @@ export function CalculadoraJurosSimples() {
     return (
         <div className="space-y-8 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-8 text-left">
+                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-6 sm:p-8 text-left">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/10">
                             <TrendingUp className="w-6 h-6 text-primary" />
@@ -55,13 +55,13 @@ export function CalculadoraJurosSimples() {
                 </div>
                 <div className="lg:col-span-8 flex flex-col gap-6 text-left">
                     {resultado ? (<>
-                        <div className="bg-gradient-to-br from-primary to-blue-600 p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
+                        <div className="bg-gradient-to-br from-primary to-emerald-600 p-8 sm:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
                             <div className="relative z-10">
                                 <p className="text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
                                     <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
                                     Montante Final
                                 </p>
-                                <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter">{formatarMoeda(resultado.montanteFinal)}</h1>
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tighter">{formatarMoeda(resultado.montanteFinal)}</h1>
                                 <p className="text-white/60 font-medium mt-3">Capital + juros após {meses} meses</p>
                             </div>
                             <DollarSign className="absolute bottom-6 right-8 w-24 h-24 text-white/10" />
@@ -81,8 +81,8 @@ export function CalculadoraJurosSimples() {
                                 <p className="text-[10px] font-black text-emerald-600 dark:text-emerald-400 uppercase tracking-widest mb-2">Total de Juros</p>
                                 <p className="text-2xl font-black text-emerald-700 dark:text-emerald-300 tabular-nums">{formatarMoeda(resultado.totalJuros)}</p>
                             </div>
-                            <div className="bg-white dark:bg-slate-900 p-7 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm flex items-center gap-5">
-                                <div className="w-12 h-12 bg-slate-50 dark:bg-slate-800 rounded-2xl flex items-center justify-center text-primary mb-5">
+                            <div className="bg-white dark:bg-slate-900 p-7 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-sm flex flex-col justify-center">
+                                <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-5">
                                     <Percent className="w-6 h-6" />
                                 </div>
                                 <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Rendimento Total</p>

@@ -38,13 +38,13 @@ function SidebarItem({ href, icon: Icon, label, active, onClick }: SidebarItemWi
             href={href}
             onClick={onClick}
             className={cn(
-                "flex items-center gap-3 px-4 py-3 min-h-[48px] rounded-xl font-medium transition-all duration-200 group",
+                "flex items-center gap-3 px-4 py-3 min-h-[48px] rounded-2xl font-semibold transition-all duration-300 group",
                 active
-                    ? "bg-primary text-white shadow-premium"
-                    : "text-slate-600 dark:text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                    ? "bg-primary text-background shadow-premium"
+                    : "text-slate-400 hover:bg-white/5 hover:text-white"
             )}
         >
-            <Icon className={cn("w-5 h-5", active ? "text-white" : "text-slate-500 group-hover:text-primary transition-colors")} />
+            <Icon className={cn("w-5 h-5", active ? "text-background" : "text-slate-500 group-hover:text-primary transition-colors")} />
             <span>{label}</span>
         </Link>
     );
@@ -64,19 +64,19 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
     ];
 
     return (
-        <div className="flex min-h-screen bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100">
+        <div className="flex min-h-screen bg-background text-foreground">
             {/* Sidebar Desktop */}
-            <aside className="hidden lg:flex flex-col w-64 border-r border-slate-200 dark:border-slate-800 h-screen sticky top-0 bg-white/80 dark:bg-slate-900/50 backdrop-blur-xl transition-all">
-                <div className="p-6">
-                    <Link href="/" className="flex items-center gap-2 text-primary group">
-                        <div className="w-10 h-10 bg-primary/10 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                            <Wallet className="w-6 h-6 text-primary" />
+            <aside className="hidden lg:flex flex-col w-72 border-r border-border h-screen sticky top-0 bg-background/50 backdrop-blur-xl transition-all">
+                <div className="p-8">
+                    <Link href="/" className="flex items-center gap-3 text-primary group">
+                        <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-glow">
+                            <Wallet className="w-7 h-7 text-primary" />
                         </div>
-                        <span className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">HubInvestor</span>
+                        <span className="text-2xl font-black tracking-tight text-white">HubInvestor</span>
                     </Link>
                 </div>
 
-                <nav className="flex-1 px-4 space-y-1 mt-4">
+                <nav className="flex-1 px-4 space-y-2 mt-4">
                     {navItems.map((item) => (
                         <SidebarItem
                             key={item.href}
@@ -86,35 +86,36 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
                     ))}
                 </nav>
 
-                <div className="p-4 mt-auto">
-                    <div className="bg-primary/5 dark:bg-primary/10 p-5 rounded-3xl border border-primary/10">
-                        <p className="text-[10px] font-bold text-primary uppercase tracking-widest mb-1 text-left">Upgrade Plan</p>
-                        <p className="text-sm text-slate-600 dark:text-slate-500 dark:text-slate-400 mb-3 text-left">Tenha análises avançadas de portfólio hoje.</p>
-                        <button className="w-full py-2.5 bg-primary text-white text-xs font-bold rounded-xl hover:bg-primary-hover transition-colors shadow-lg shadow-primary/20">
-                            Saiba Mais
+                <div className="p-6 mt-auto">
+                    <div className="bg-white/5 p-6 rounded-[2rem] border border-white/10 relative overflow-hidden group">
+                        <div className="absolute -right-4 -bottom-4 w-20 h-20 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all"></div>
+                        <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2 text-left relative z-10">Pro Plan</p>
+                        <p className="text-xs text-slate-400 mb-4 text-left relative z-10">Desbloqueie análises de portfólio profissionais.</p>
+                        <button className="w-full py-3 bg-primary text-background text-xs font-black uppercase tracking-widest rounded-xl hover:bg-primary-hover transition-all shadow-premium relative z-10">
+                            Upgrade Agora
                         </button>
                     </div>
 
                     <button
                         onClick={() => router.push('/lp')}
-                        className="w-full flex items-center gap-3 px-4 py-3 mt-4 text-slate-500 hover:text-red-500 hover:bg-red-50 dark:hover:bg-red-950/20 rounded-xl transition-all"
+                        className="w-full flex items-center gap-3 px-4 py-4 mt-6 text-slate-500 hover:text-red-400 hover:bg-red-400/5 rounded-2xl transition-all font-bold text-sm"
                     >
                         <LogOut className="w-5 h-5" />
-                        <span className="font-medium text-sm text-left">Sair</span>
+                        <span className="text-left">Sair da Conta</span>
                     </button>
                 </div>
             </aside>
 
             {/* Mobile Header */}
-            <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 p-4 flex items-center justify-between">
+            <div className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border p-4 flex items-center justify-between">
                 <Link href="/" className="flex items-center gap-2 text-primary">
-                    <Wallet className="w-6 h-6" />
-                    <span className="text-lg font-bold tracking-tight">HubInvestor</span>
+                    <Wallet className="w-7 h-7" />
+                    <span className="text-lg font-black tracking-tight text-white uppercase tracking-widest">HubInvestor</span>
                 </Link>
                 <button
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
-                    className="min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-600 dark:text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl"
+                    className="min-w-[44px] min-h-[44px] flex items-center justify-center text-slate-400 hover:bg-white/5 rounded-2xl transition-all"
                 >
                     {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                 </button>
@@ -123,41 +124,46 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
             {/* Main Content */}
             <main className="flex-1 min-w-0 flex flex-col pt-20 lg:pt-0 h-screen transition-all">
                 {/* Topbar */}
-                <header className="h-20 hidden lg:flex items-center justify-between px-8 border-b border-slate-200 dark:border-slate-800 shrink-0">
-                    <div className="relative group flex-1 max-w-md">
-                        <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-slate-500 dark:text-slate-400 w-4 h-4 transition-colors group-focus-within:text-primary" />
+                <header className="h-24 hidden lg:flex items-center justify-between px-10 border-b border-border shrink-0">
+                    <div className="relative group flex-1 max-w-lg">
+                        <Search className="absolute left-5 top-1/2 -translate-y-1/2 text-slate-500 w-5 h-5 transition-colors group-focus-within:text-primary" />
                         <input
                             type="text"
-                            placeholder="Buscar ativos ou cálculos..."
-                            className="w-full pl-11 pr-4 py-2.5 bg-slate-100 dark:bg-slate-800 border-transparent focus:bg-white dark:focus:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary/30 rounded-2xl text-sm transition-all text-left"
+                            placeholder="Buscar ativos, cálculos ou ferramentas..."
+                            className="w-full pl-14 pr-6 py-3.5 bg-card/50 border border-border focus:bg-card focus:ring-4 focus:ring-primary/10 focus:border-primary/40 rounded-[1.5rem] text-sm transition-all text-left placeholder:text-slate-600"
                         />
                     </div>
 
-                    <div className="flex items-center gap-4">
-                        <button aria-label="Notificações" className="p-2.5 text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-2xl transition-all relative">
-                            <Bell className="w-5 h-5" />
-                            <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 border-2 border-white dark:border-slate-800 rounded-full"></span>
+                    <div className="flex items-center gap-6">
+                        <button aria-label="Notificações" className="p-3 text-slate-400 hover:bg-white/5 rounded-2xl transition-all relative group">
+                            <Bell className="w-6 h-6 group-hover:text-primary transition-colors" />
+                            <span className="absolute top-3 right-3 w-2.5 h-2.5 bg-primary border-2 border-background rounded-full"></span>
                         </button>
 
-                        <div className="h-8 w-px bg-slate-200 dark:bg-slate-800 mx-2"></div>
+                        <div className="h-10 w-px bg-border mx-2"></div>
 
-                        <div className="flex items-center gap-3 pl-2">
+                        <div className="flex items-center gap-4 pl-2">
                             <div className="text-right hidden sm:block">
-                                <p className="text-sm font-bold text-slate-900 dark:text-white leading-none mb-1 text-left">Vincentius</p>
-                                <p className="text-[10px] font-medium text-slate-500 dark:text-slate-400 text-left">Free Plan</p>
+                                <p className="text-sm font-black text-white leading-none mb-1.5 text-left">Vincentius</p>
+                                <div className="flex items-center gap-2">
+                                    <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
+                                    <p className="text-[10px] font-bold text-primary uppercase tracking-widest text-left">Free Plan</p>
+                                </div>
                             </div>
-                            <div className="w-10 h-10 rounded-2xl overflow-hidden border-2 border-white dark:border-slate-800 shadow-sm ring-2 ring-slate-100 dark:ring-slate-800">
-                                <img
-                                    src="https://api.dicebear.com/7.x/avataaars/svg?seed=Vincentius"
-                                    alt="Avatar do usuário HubInvestor"
-                                    className="w-full h-full object-cover"
-                                />
+                            <div className="w-12 h-12 rounded-2xl overflow-hidden border-2 border-border shadow-glow p-0.5">
+                                <div className="w-full h-full rounded-[0.9rem] overflow-hidden">
+                                    <img
+                                        src="https://api.dicebear.com/7.x/avataaars/svg?seed=Vincentius"
+                                        alt="Avatar do usuário HubInvestor"
+                                        className="w-full h-full object-cover"
+                                    />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </header>
 
-                <div className="flex-1 overflow-y-auto p-4 lg:p-8 custom-scrollbar bg-slate-50 dark:bg-slate-950/30">
+                <div className="flex-1 overflow-y-auto p-6 lg:p-12 custom-scrollbar bg-background">
                     <div className="max-w-7xl mx-auto">
                         {children}
                     </div>

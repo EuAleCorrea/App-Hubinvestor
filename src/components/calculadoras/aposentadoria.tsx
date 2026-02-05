@@ -28,7 +28,7 @@ export function CalculadoraAposentadoria() {
     return (
         <div className="space-y-8 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-8 text-left">
+                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-6 sm:p-8 text-left">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/10">
                             <Users className="w-6 h-6 text-primary" />
@@ -78,13 +78,13 @@ export function CalculadoraAposentadoria() {
                 </div>
                 <div className="lg:col-span-8 flex flex-col gap-6 text-left">
                     {resultado ? (<>
-                        <div className="bg-gradient-to-br from-primary to-blue-600 p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
+                        <div className="bg-gradient-to-br from-primary to-emerald-600 p-8 sm:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
                             <div className="relative z-10">
                                 <p className="text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
                                     <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
                                     Aporte Mensal Necessário
                                 </p>
-                                <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter">{formatarMoeda(resultado.aporteMensalNecessario)}</h1>
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tighter">{formatarMoeda(resultado.aporteMensalNecessario)}</h1>
                                 <p className="text-white/60 font-medium mt-3">Invista todo mês para atingir sua meta</p>
                             </div>
                             <Users className="absolute bottom-6 right-8 w-24 h-24 text-white/10" />
@@ -111,16 +111,16 @@ export function CalculadoraAposentadoria() {
                                 </div>
                                 <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-2">Tempo Restante</p>
                                 <p className="text-2xl font-black text-white tabular-nums">{resultado.mesesAteAposentadoria} meses</p>
-                                <p className="text-xs text-slate-500 mt-1">{anosRestantes} anos</p>
+                                <p className="text-xs text-slate-400 mt-1">{anosRestantes} anos</p>
                             </div>
                         </div>
-                        <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card">
+                        <div className="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card">
                             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Progresso</h3>
                             <div className="w-full h-4 bg-slate-100 dark:bg-slate-800 rounded-full overflow-hidden">
-                                <div className="h-full bg-gradient-to-r from-primary to-blue-600 rounded-full transition-all duration-500" style={{ width: `${Math.min(100, (resultado.patrimonioAtual / resultado.patrimonioNecessario) * 100)}%` }} />
+                                <div className="h-full bg-gradient-to-r from-primary to-emerald-500 rounded-full transition-all duration-500" style={{ width: `${Math.min(100, (resultado.patrimonioAtual / resultado.patrimonioNecessario) * 100)}%` }} />
                             </div>
                             <div className="flex justify-between text-sm mt-2">
-                                <span className="text-slate-500">{formatarMoeda(resultado.patrimonioAtual)}</span>
+                                <span className="text-slate-500 font-medium">{formatarMoeda(resultado.patrimonioAtual)}</span>
                                 <span className="text-slate-900 dark:text-white font-bold">{formatarMoeda(resultado.patrimonioNecessario)}</span>
                             </div>
                         </div>

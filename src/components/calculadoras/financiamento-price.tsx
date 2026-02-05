@@ -23,7 +23,7 @@ export function CalculadoraFinanciamentoPrice() {
         <div className="space-y-8 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 {/* Painel de Controle */}
-                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-8 text-left">
+                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-6 sm:p-8 text-left">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/10">
                             <Building2 className="w-6 h-6 text-primary" />
@@ -100,13 +100,13 @@ export function CalculadoraFinanciamentoPrice() {
                     {resultado ? (
                         <>
                             {/* Card Principal */}
-                            <div className="bg-gradient-to-br from-primary to-blue-600 p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
+                            <div className="bg-gradient-to-br from-primary to-emerald-600 p-8 sm:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
                                 <div className="relative z-10">
                                     <p className="text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
                                         <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
                                         Parcela Fixa Mensal
                                     </p>
-                                    <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter">
+                                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tighter">
                                         {formatarMoeda(resultado.parcelaFixa)}
                                     </h1>
                                     <p className="text-white/60 font-medium mt-3">
@@ -150,7 +150,7 @@ export function CalculadoraFinanciamentoPrice() {
                             </div>
 
                             {/* Tabela de Parcelas */}
-                            <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card">
+                            <div className="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card">
                                 <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Primeiras e Últimas Parcelas</h3>
                                 <div className="overflow-x-auto">
                                     <table className="w-full text-sm">

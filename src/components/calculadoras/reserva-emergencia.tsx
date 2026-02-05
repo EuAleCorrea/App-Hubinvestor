@@ -19,7 +19,7 @@ export function CalculadoraReservaEmergencia() {
     return (
         <div className="space-y-8 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-8 text-left">
+                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-6 sm:p-8 text-left">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/10">
                             <Shield className="w-6 h-6 text-primary" />
@@ -55,18 +55,18 @@ export function CalculadoraReservaEmergencia() {
                     </div>
                 </div>
                 <div className="lg:col-span-8 flex flex-col gap-6 text-left">
-                    <div className="bg-gradient-to-br from-primary to-blue-600 p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-primary to-emerald-600 p-8 sm:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
                         <div className="relative z-10">
                             <p className="text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
                                 Reserva Necessária
                             </p>
-                            <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter">{formatarMoeda(reservaNecessaria)}</h1>
+                            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tighter">{formatarMoeda(reservaNecessaria)}</h1>
                             <p className="text-white/60 font-medium mt-3">{mesesReserva} meses de segurança</p>
                         </div>
                         <Shield className="absolute bottom-6 right-8 w-24 h-24 text-white/10" />
                     </div>
-                    <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card">
+                    <div className="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card">
                         <div className="flex items-center justify-between mb-4">
                             <span className="text-sm font-bold text-slate-600 dark:text-slate-500 dark:text-slate-400">Progresso</span>
                             <span className={`text-sm font-black ${statusColor}`}>{status}</span>

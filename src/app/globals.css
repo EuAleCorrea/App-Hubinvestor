@@ -1,12 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F8FAFC;
-  --foreground: #0F172A;
+  /* HubInvestor Core Palette (Baseado na Nova LP) */
+  --background: #10221d;
+  --foreground: #F8FAFC;
 
-  --primary: #005BFF;
-  --primary-hover: #004ecc;
+  --primary: #13ecb6;
+  --primary-hover: #10d3a3;
 
+  --card: #1c2724;
+  --card-foreground: #F8FAFC;
+
+  --border: #283935;
+  --muted: #64748B;
+  --muted-foreground: #94A3B8;
+
+  /* Accent Colors */
+  --accent: #13ecb6;
+  --accent-foreground: #10221d;
+
+  /* Base Slates (Opcional, para compatibilidade) */
   --slate-50: #F8FAFC;
   --slate-100: #F1F5F9;
   --slate-200: #E2E8F0;
@@ -31,6 +44,14 @@
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
 
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  /* Tokens Legados de Compatibilidade */
   --color-slate-50: var(--slate-50);
   --color-slate-100: var(--slate-100);
   --color-slate-200: var(--slate-200);
@@ -42,14 +63,22 @@
   --color-slate-800: var(--slate-800);
   --color-slate-900: var(--slate-900);
 
+  /* Alias para LP (para não quebrar componentes já feitos) */
+  --color-lp-primary: var(--primary);
+  --color-lp-background: var(--background);
+  --color-lp-card: var(--card);
+  --color-lp-border: var(--border);
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui;
 
-  --radius-3xl: 1.5rem;
-  --radius-2xl: 1rem;
-  --radius-xl: 0.75rem;
+  --radius-3xl: 2rem;
+  --radius-2xl: 1.5rem;
+  --radius-xl: 1rem;
+  --radius-lg: 0.75rem;
 
-  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  --shadow-premium: 0 10px 15px -3px rgba(0, 91, 255, 0.1), 0 4px 6px -4px rgba(0, 91, 255, 0.1);
+  --shadow-card: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-premium: 0 20px 25px -5px rgba(19, 236, 182, 0.1), 0 8px 10px -6px rgba(19, 236, 182, 0.1);
+  --shadow-glow: 0 0 20px rgba(19, 236, 182, 0.15);
 }
 
 body {
@@ -59,14 +88,25 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.chart-gradient {
-  background: linear-gradient(180deg, rgba(0, 91, 255, 0.1) 0%, rgba(0, 91, 255, 0) 100%);
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.glass {
+  background: rgba(28, 39, 36, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(40, 57, 53, 0.5);
+}
+
+.glass-primary {
+  background: rgba(19, 236, 182, 0.05);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(19, 236, 182, 0.1);
 }
 
 h1,
@@ -95,4 +135,23 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
   appearance: textfield;
+}
+
+/* Utilitário para menus horizontais mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+/* Melhoria de toque e animações mobile */
+@media (max-width: 640px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
 }

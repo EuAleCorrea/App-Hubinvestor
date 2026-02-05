@@ -33,7 +33,7 @@ export function CalculadoraJurosCompostos() {
         <div className="space-y-8 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 {/* Painel de Controle (Inputs) */}
-                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-8 text-left">
+                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-6 sm:p-8 text-left">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/10">
                             <Calculator className="w-6 h-6 text-primary" />
@@ -108,7 +108,7 @@ export function CalculadoraJurosCompostos() {
                     {resultado ? (
                         <>
                             {/* Card de Valor Final */}
-                            <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card relative overflow-hidden">
+                            <div className="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card relative overflow-hidden">
                                 <div className="relative z-10">
                                     <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
                                         <span className="w-1.5 h-1.5 bg-primary rounded-full animate-pulse"></span>
@@ -180,8 +180,8 @@ export function CalculadoraJurosCompostos() {
                                         <AreaChart data={resultado.evolucaoMensal}>
                                             <defs>
                                                 <linearGradient id="primaryGradient" x1="0" y1="0" x2="0" y2="1">
-                                                    <stop offset="0%" stopColor="#005BFF" stopOpacity={0.2} />
-                                                    <stop offset="100%" stopColor="#005BFF" stopOpacity={0} />
+                                                    <stop offset="0%" stopColor="#13ecb6" stopOpacity={0.2} />
+                                                    <stop offset="100%" stopColor="#13ecb6" stopOpacity={0} />
                                                 </linearGradient>
                                             </defs>
                                             <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.1)" vertical={false} />
@@ -201,7 +201,7 @@ export function CalculadoraJurosCompostos() {
                                                 dx={-10}
                                             />
                                             <Tooltip
-                                                cursor={{ stroke: '#005BFF', strokeWidth: 1.5, strokeDasharray: '4 4' }}
+                                                cursor={{ stroke: '#13ecb6', strokeWidth: 1.5, strokeDasharray: '4 4' }}
                                                 content={({ active, payload, label }) => {
                                                     if (active && payload && payload.length) {
                                                         return (
@@ -220,11 +220,11 @@ export function CalculadoraJurosCompostos() {
                                             <Area
                                                 type="monotone"
                                                 dataKey="montante"
-                                                stroke="#005BFF"
+                                                stroke="#13ecb6"
                                                 strokeWidth={4}
                                                 fill="url(#primaryGradient)"
                                                 animationDuration={1500}
-                                                activeDot={{ r: 6, fill: '#005BFF', stroke: '#fff', strokeWidth: 3 }}
+                                                activeDot={{ r: 6, fill: '#13ecb6', stroke: '#fff', strokeWidth: 3 }}
                                             />
                                         </AreaChart>
                                     </ResponsiveContainer>

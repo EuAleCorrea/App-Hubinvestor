@@ -23,7 +23,7 @@ export function CalculadoraIndependenciaFinanceira() {
         <div className="space-y-8 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                 {/* Painel de Controle (Inputs) */}
-                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-8 text-left">
+                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-6 sm:p-8 text-left">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/10">
                             <Shield className="w-6 h-6 text-primary" />
@@ -85,16 +85,16 @@ export function CalculadoraIndependenciaFinanceira() {
                     {resultado ? (
                         <>
                             {/* Card Principal - Patrimônio Necessário */}
-                            <div className="bg-slate-900 p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
+                            <div className="bg-slate-900 p-8 sm:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
                                 <div className="relative z-10">
                                     <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
-                                        <Flame className="w-4 h-4" />
+                                        <Flame className="w-4 h-4 text-primary" />
                                         Seu Número FIRE
                                     </p>
-                                    <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter">
+                                    <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tighter">
                                         {formatarMoeda(resultado.patrimonioNecessario)}
                                     </h1>
-                                    <p className="text-slate-500 dark:text-slate-400 font-medium mt-4 max-w-md">
+                                    <p className="text-slate-400 font-medium mt-4 max-w-md">
                                         Patrimônio necessário para cobrir suas despesas indefinidamente com a taxa de retirada escolhida.
                                     </p>
                                 </div>
@@ -139,10 +139,10 @@ export function CalculadoraIndependenciaFinanceira() {
                             {/* Card Explicativo - Checklist FIRE */}
                             <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card">
                                 <h4 className="font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
-                                    <Flame className="w-5 h-5 text-orange-500" />
+                                    <Flame className="w-5 h-5 text-emerald-500" />
                                     Próximos Passos para o FIRE
                                 </h4>
-                                <div className="grid md:grid-cols-2 gap-4">
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                     {[
                                         "Calcule sua taxa de poupança atual",
                                         "Reduza despesas desnecessárias",

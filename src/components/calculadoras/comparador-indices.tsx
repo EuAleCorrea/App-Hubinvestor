@@ -29,7 +29,7 @@ export function CalculadoraComparadorIndices() {
     return (
         <div className="space-y-8 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-8 text-left">
+                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-6 sm:p-8 text-left">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/10">
                             <BarChart3 className="w-6 h-6 text-primary" />
@@ -71,31 +71,31 @@ export function CalculadoraComparadorIndices() {
                 </div>
                 <div className="lg:col-span-8 flex flex-col gap-6 text-left">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="bg-gradient-to-br from-primary to-blue-600 p-8 rounded-[2rem] shadow-xl relative overflow-hidden">
+                        <div className="bg-gradient-to-br from-primary to-emerald-600 p-8 sm:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
                             <p className="text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
                                 Rendimento CDI
                             </p>
-                            <h2 className="text-4xl font-black text-white tracking-tighter">{formatarMoeda(rendimentoCDI)}</h2>
+                            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tighter">{formatarMoeda(rendimentoCDI)}</h2>
                             <p className="text-white/60 mt-2">Valor final: {formatarMoeda(valorFinalCDI)}</p>
                             <DollarSign className="absolute bottom-4 right-6 w-16 h-16 text-white/10" />
                         </div>
-                        <div className="bg-gradient-to-br from-orange-500 to-red-500 p-8 rounded-[2rem] shadow-xl relative overflow-hidden">
+                        <div className="bg-gradient-to-br from-orange-500 to-red-500 p-8 sm:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
                             <p className="text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-2 flex items-center gap-2">
                                 <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
                                 Inflação (IPCA)
                             </p>
-                            <h2 className="text-4xl font-black text-white tracking-tighter">{formatarMoeda(rendimentoIPCA)}</h2>
+                            <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tighter">{formatarMoeda(rendimentoIPCA)}</h2>
                             <p className="text-white/60 mt-2">Perda de poder: {formatarMoeda(valorFinalIPCA)}</p>
                             <TrendingUp className="absolute bottom-4 right-6 w-16 h-16 text-white/10" />
                         </div>
                     </div>
-                    <div className={`p-10 rounded-[2rem] shadow-xl ${rendimentoReal >= 0 ? 'bg-emerald-600' : 'bg-red-600'}`}>
+                    <div className={`p-8 sm:p-10 rounded-[2rem] shadow-xl ${rendimentoReal >= 0 ? 'bg-emerald-600' : 'bg-red-600'}`}>
                         <p className="text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
                             <TrendingUp className="w-4 h-4" />
                             Rendimento Real
                         </p>
-                        <h1 className="text-5xl font-black text-white tracking-tighter">{formatarMoeda(rendimentoReal)}</h1>
+                        <h1 className="text-4xl sm:text-5xl font-black text-white tracking-tighter">{formatarMoeda(rendimentoReal)}</h1>
                         <p className="text-white/60 mt-3">{rendimentoReal >= 0 ? 'Seu dinheiro ganhou poder de compra' : 'Você perdeu poder de compra'}</p>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

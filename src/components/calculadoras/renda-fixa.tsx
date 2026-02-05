@@ -22,7 +22,7 @@ export function CalculadoraRendaFixa() {
     return (
         <div className="space-y-8 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-8 text-left">
+                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-6 sm:p-8 text-left">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/10">
                             <Landmark className="w-6 h-6 text-primary" />
@@ -73,13 +73,13 @@ export function CalculadoraRendaFixa() {
                 </div>
                 <div className="lg:col-span-8 flex flex-col gap-6 text-left">
                     {resultado ? (<>
-                        <div className="bg-gradient-to-br from-primary to-blue-600 p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
+                        <div className="bg-gradient-to-br from-primary to-emerald-600 p-8 sm:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
                             <div className="relative z-10">
                                 <p className="text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
                                     <span className="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span>
                                     Valor Líquido Final
                                 </p>
-                                <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter">{formatarMoeda(resultado.valorLiquido)}</h1>
+                                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white tracking-tighter">{formatarMoeda(resultado.valorLiquido)}</h1>
                                 <div className="mt-4 flex items-center gap-3">
                                     {resultado.isento && <span className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full">Isento de IR</span>}
                                     <span className="text-white/60 font-medium">{tipo.toUpperCase()} • {percentual}% do CDI</span>

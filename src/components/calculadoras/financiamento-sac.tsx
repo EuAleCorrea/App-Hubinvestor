@@ -40,7 +40,7 @@ export function CalculadoraFinanciamentoSAC() {
     return (
         <div className="space-y-8 max-w-6xl">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-8 text-left">
+                <div className="lg:col-span-4 bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card p-6 sm:p-8 text-left">
                     <div className="flex items-center gap-4 mb-10">
                         <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center border border-primary/10">
                             <Building2 className="w-6 h-6 text-primary" />
@@ -82,17 +82,17 @@ export function CalculadoraFinanciamentoSAC() {
                 <div className="lg:col-span-8 flex flex-col gap-6 text-left">
                     {resultado ? (<>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div className="bg-slate-900 p-8 rounded-[2rem] shadow-xl relative overflow-hidden">
+                            <div className="bg-slate-900 p-8 sm:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
                                 <p className="text-[10px] font-black text-primary uppercase tracking-[0.2em] mb-2">Primeira Parcela</p>
-                                <h2 className="text-4xl font-black text-white tracking-tighter">{formatarMoeda(resultado.primeiraParcela)}</h2>
+                                <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tighter">{formatarMoeda(resultado.primeiraParcela)}</h2>
                                 <div className="mt-4 flex items-center gap-2 text-slate-500 dark:text-slate-400 text-sm">
                                     <ArrowDown className="w-4 h-4 text-primary" />
                                     Parcelas decrescem mensalmente
                                 </div>
                             </div>
-                            <div className="bg-gradient-to-br from-primary to-blue-600 p-8 rounded-[2rem] shadow-xl relative overflow-hidden">
+                            <div className="bg-gradient-to-br from-primary to-emerald-600 p-8 sm:p-10 rounded-[2rem] shadow-xl relative overflow-hidden">
                                 <p className="text-[10px] font-black text-white/70 uppercase tracking-[0.2em] mb-2">Última Parcela</p>
-                                <h2 className="text-4xl font-black text-white tracking-tighter">{formatarMoeda(resultado.ultimaParcela)}</h2>
+                                <h2 className="text-3xl sm:text-4xl font-black text-white tracking-tighter">{formatarMoeda(resultado.ultimaParcela)}</h2>
                                 <div className="mt-4 flex items-center gap-2 text-white/70 text-sm">
                                     Economia: {formatarMoeda(resultado.primeiraParcela - resultado.ultimaParcela)}/mês
                                 </div>
@@ -122,15 +122,15 @@ export function CalculadoraFinanciamentoSAC() {
                                 <p className="text-2xl font-black text-white tabular-nums">{formatarPercentual(resultado.totalJuros / Number(valorFinanciado))}</p>
                             </div>
                         </div>
-                        <div className="bg-white dark:bg-slate-900 p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card">
+                        <div className="bg-white dark:bg-slate-900 p-6 sm:p-8 rounded-[2rem] border border-slate-100 dark:border-slate-800 shadow-card">
                             <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Evolução das Parcelas</h3>
                             <div className="h-[280px] w-full">
                                 <ResponsiveContainer width="100%" height="100%">
                                     <AreaChart data={dadosGrafico}>
                                         <defs>
                                             <linearGradient id="parcelaGradientSAC" x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />
-                                                <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity={0} />
+                                                <stop offset="0%" stopColor="#13ecb6" stopOpacity={0.3} />
+                                                <stop offset="100%" stopColor="#13ecb6" stopOpacity={0} />
                                             </linearGradient>
                                         </defs>
                                         <CartesianGrid strokeDasharray="3 3" stroke="rgba(148, 163, 184, 0.1)" vertical={false} />
@@ -147,7 +147,7 @@ export function CalculadoraFinanciamentoSAC() {
                                             }
                                             return null;
                                         }} />
-                                        <Area type="monotone" dataKey="parcela" stroke="hsl(var(--primary))" strokeWidth={3} fill="url(#parcelaGradientSAC)" />
+                                        <Area type="monotone" dataKey="parcela" stroke="#13ecb6" strokeWidth={3} fill="url(#parcelaGradientSAC)" />
                                     </AreaChart>
                                 </ResponsiveContainer>
                             </div>
